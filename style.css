@@ -27,7 +27,7 @@ header {
     justify-content: flex-end;
     align-items: center;
     transition: 1s;
-    z-index: 2;
+    z-index: 3;
     /* background-color: green; */
 }
 header.wrap {
@@ -56,7 +56,7 @@ header .logo {
     font-weight: 700;
     transition: 1s;
     text-decoration: none;
-    z-index: 3;
+    z-index: 4;
 }
 header.wrap .logo {
     position: absolute;
@@ -71,7 +71,7 @@ header .logo:hover {
 nav {
     position: relative;
     display: flex;
-    z-index: 1;
+    z-index: 2;
 }
 nav ul {
     position: relative;
@@ -237,6 +237,24 @@ nav ul li a:hover {
 }
 
 /* MEDIA */
+@media (max-width: 1366px) {
+    /* HOBBY */
+
+    .hobby {
+        padding: 50px;
+    }
+
+    .hobby .card {
+        max-width: 430px;
+        height: 430px;
+    }
+    .hobby .card:hover {
+        height: 600px;
+    }
+    .hobby .card .boxImg {
+        width: 345px;
+    }
+}
 
 @media (max-width: 1024px) {
     header {
@@ -298,5 +316,48 @@ nav ul li a:hover {
     }
     header.wrap .toggle.active i.fa-times {
         display: block;
+    }
+
+    /* HOBBY */
+
+    .hobby {
+        padding: 50px;
+    }
+
+    .hobby .card {
+        max-width: 360px;
+        height: 360px;
+    }
+    .hobby .card:hover {
+        height: 500px;
+    }
+    .hobby .card .boxImg {
+        width: 290px;
+    }
+}
+
+@media (max-width: 360px) {
+    /* HOBBY */
+
+    .hobby {
+        padding: 10px;
+    }
+
+    .hobby .card {
+        max-width: 340px;
+        height: 300px;
+    }
+    .hobby .card:hover {
+        height: 450px;
+    }
+    .hobby .card .boxImg {
+        width: 250px;
+    }
+
+    .hobby .card .description {
+        position: relative;
+
+        margin-top: -50px;
+        padding: 10px 10px;
     }
 }
