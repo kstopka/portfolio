@@ -109,7 +109,7 @@ nav ul li a:hover {
     align-items: center;
     flex-wrap: wrap;
 
-    margin-top: 30vh;
+    margin-top: 10vh;
     padding: 100px;
     max-width: 1920px;
 }
@@ -240,27 +240,27 @@ nav ul li a:hover {
 @keyframes logoColors {
     0%,
     100% {
-        color: rgb(230, 144, 144);
+        color: rgb(255, 0, 0);
         border-right: 2px solid rgb(230, 144, 144);
     }
     16.66% {
-        color: rgb(230, 230, 144);
+        color: rgb(255, 255, 0);
         border-right: 2px solid rgb(230, 230, 144);
     }
     33.33% {
-        color: rgb(144, 230, 144);
+        color: rgb(0, 255, 0);
         border-right: 2px solid rgb(144, 230, 144);
     }
     50% {
-        color: rgb(144, 230, 230);
+        color: rgb(0, 255, 255);
         border-right: 2px solid rgb(144, 230, 230);
     }
     66.66% {
-        color: rgb(144, 144, 230);
+        color: rgb(0, 0, 255);
         border-right: 2px solid rgb(144, 144, 230);
     }
     83.33% {
-        color: rgb(230, 144, 230);
+        color: rgb(255, 0, 255);
         border-right: 2px solid rgb(230, 144, 230);
     }
 }
