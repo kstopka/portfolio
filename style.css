@@ -172,25 +172,54 @@ nav ul li a:hover {
 }
 
 /* NEON */
+.neon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    background-color: #fff;
+    overflow: hidden;
+}
 .neon h2 {
     position: relative;
     /* background-color: red; */
-    margin: 50vh auto 0;
+    /* margin: 50vh auto 50vh; */
     width: 35vh;
     font-size: 10vh;
-    color: #333;
-    -webkit-text-stroke: 2px #333;
+    color: #fff;
+    -webkit-text-stroke: 2px #fff;
+}
+.neon .slantOne {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    transform: skewY(-15deg);
+    transform-origin: top left;
+}
+.neon .slantTwo {
+    position: absolute;
+    bottom: -100%;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    transform: skewY(15deg);
+    transform-origin: top right;
 }
 
 .neon h2::before {
     content: attr(data-text);
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     color: rgb(144, 171, 230);
-    -webkit-text-stroke: 0px #333;
+    -webkit-text-stroke: 0px #fff;
     border-right: 2px solid rgb(144, 171, 230);
     overflow: hidden;
     animation: logAnimate 5s linear infinite both, logoColors 35s linear infinite both;
