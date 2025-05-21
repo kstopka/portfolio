@@ -8,11 +8,11 @@ type TranslateTheme = {
 
 export const translateTheme: TranslateTheme = {
   dark: {
-    PL: "ciemny",
-    EN: "dark",
+    pl: "ciemny",
+    en: "dark",
   },
   light: {
-    PL: "jasny",
-    EN: "light",
+    pl: "jasny",
+    en: "light",
   },
 };

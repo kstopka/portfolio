@@ -1,5 +1,9 @@
 import { Language } from "../../components/contexted/App/types";
 
+type TranslateItem = {
+  pl: string;
+  en: string;
+};
 export interface IPage {
   id: string;
   slug: string;
@@ -10,19 +14,15 @@ export interface IPage {
 }
 
 export interface IAcfHome {
-  homecontent: {
-    title: string;
-    language: Language;
-    description: string;
-  }[];
+  hero: {
+    title: TranslateItem;
+    description: TranslateItem;
+  };
 }
 export interface IAcfContact {
-  contactContent: {
-    language: Language;
-    city: string;
-    country: string;
+  contact: {
     email: string;
-    github: string;
-    linkedin: string;
-  }[];
+    city: TranslateItem;
+    country: TranslateItem;
+  };
 }

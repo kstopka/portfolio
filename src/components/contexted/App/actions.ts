@@ -23,7 +23,7 @@ class AppActions {
 
   toggleLanguage = (state: IAppState) => ({
     ...state,
-    language: state.language === "PL" ? ("EN" as Language) : ("PL" as Language),
+    language: state.language === "pl" ? ("en" as Language) : ("pl" as Language),
   });
 
   toggleTheme = (state: IAppState) => ({

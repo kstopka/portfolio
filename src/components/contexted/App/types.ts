@@ -1,6 +1,6 @@
 import { ReactNode, Dispatch } from "react";
 
-type Language = "PL" | "EN";
+type Language = "pl" | "en";
 type Theme = "dark" | "light";
 
 interface IAppState {

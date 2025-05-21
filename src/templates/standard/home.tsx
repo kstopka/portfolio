@@ -1,8 +1,8 @@
 import React from "react";
 import { IPage } from "../../types/standard";
-import useContentByLanguage from "../../hooks/useContentByLanguage";
 import { Layout, Loading } from "../../components/Layout";
 import Button from "../../components/atoms/Button";
+import { useContextState, IAppState, AppCtx } from "../../components/contexted";
 
 interface HomeProps {
   pageContext: {
@@ -10,17 +10,16 @@ interface HomeProps {
   };
 }
 
-const HomePage: React.FC<HomeProps> = ({ pageContext }) => {
-  const { page } = pageContext;
-  const { acfHome } = page;
-  const selectedContent = useContentByLanguage(acfHome.homecontent);
+const HomePage: React.FC<HomeProps> = ({ pageContext }: HomeProps) => {
+  const { hero } = pageContext.page.acfHome;
+  const { language } = useContextState<IAppState>(AppCtx, ["language"]);
 
-  if (!selectedContent) return <Loading />;
+  if (!hero || !language) return <Loading />;
 
   return (
     <Layout>
-      <div dangerouslySetInnerHTML={{ __html: selectedContent.title }} />
-      <div dangerouslySetInnerHTML={{ __html: selectedContent.description }} />
+      <h1>{hero.title[language]}</h1>
+      <div dangerouslySetInnerHTML={{ __html: hero.description[language] }} />
       <Button
         onClick={() => console.log("test")}
         label="Test"

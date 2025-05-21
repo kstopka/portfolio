@@ -17,18 +17,28 @@ class StandardResourceClass {
             title
             content
             acfHome {
-              homecontent {
-                title
-                language
-                description
+              hero {
+                title {
+                  pl
+                  en
+                }
+                description {
+                  pl
+                  en
+                }
               }
             }
             acfContact {
-              contactContent {
-                language
-                city
-                country
+              contact {
                 email
+                city {
+                  pl
+                  en
+                }
+                country {
+                  pl
+                  en
+                }
               }
             }
           }

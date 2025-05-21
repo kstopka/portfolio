@@ -48,12 +48,12 @@ const Navbar: React.FC = () => {
         ))}
         <Button
           onClick={toggleTheme}
-          label={translateTheme[themeValue][language]}
+          label={translateTheme[themeValue][language].toUpperCase()}
           variant="menuToggle"
         />
         <Button
           onClick={toggleLanguage}
-          label={language}
+          label={language.toUpperCase()}
           variant="menuToggle"
         />
       </S.NavLinksContainer>

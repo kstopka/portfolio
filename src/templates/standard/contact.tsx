@@ -1,7 +1,7 @@
 import React from "react";
 import { IPage } from "../../types/standard";
-import useContentByLanguage from "../../hooks/useContentByLanguage";
 import { Layout, Loading } from "../../components/Layout";
+import { AppCtx, IAppState, useContextState } from "../../components/contexted";
 
 interface ContactProps {
   pageContext: {
@@ -10,16 +10,16 @@ interface ContactProps {
 }
 
 const ContactPage: React.FC<ContactProps> = ({ pageContext }) => {
-  const { page } = pageContext;
-  const { acfContact } = page;
-  const selectedContent = useContentByLanguage(acfContact.contactContent);
+  const { language } = useContextState<IAppState>(AppCtx, ["language"]);
 
-  if (!selectedContent) return <Loading />;
+  const { contact } = pageContext.page.acfContact;
+
+  if (!contact || !language) return <Loading />;
 
   return (
     <Layout>
-      <p>{selectedContent.country}</p>
-      <p>{selectedContent.city}</p>
+      <p>{contact.country[language]}</p>
+      <p>{contact.city[language]}</p>
     </Layout>
   );
 };

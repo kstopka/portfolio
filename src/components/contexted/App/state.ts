@@ -3,7 +3,7 @@ import { IAppState } from "./types";
 const initialState: IAppState = {
   isBusy: true,
   isModalOpen: false,
-  language: "PL",
+  language: "pl",
   theme: "dark",
 };
 

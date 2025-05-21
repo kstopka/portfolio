@@ -1,8 +1,8 @@
 // INFO: URL_PATHS
 const URL_PATHS = {
-  home: { PL: "Strona Główna", EN: "Home", path: "/" },
-  about: { PL: "O mnie", EN: "About", path: "/about" },
-  contact: { PL: "Kontakt", EN: "Contact", path: "/contact" },
+  home: { pl: "Strona Główna", en: "Home", path: "/" },
+  about: { pl: "O mnie", en: "About", path: "/about" },
+  contact: { pl: "Kontakt", en: "Contact", path: "/contact" },
 };
 
 const URL_PATHS_Arr = Object.entries(URL_PATHS).map(([key, value]) => ({
