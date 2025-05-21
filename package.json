@@ -1,0 +1,45 @@
+{
+  "name": "gatsby-template",
+  "version": "1.0.0",
+  "private": true,
+  "description": "gatsby-template",
+  "author": "Krystian Stopka",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby clean && gatsby develop",
+    "build": "gatsby clean && gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@types/lodash.throttle": "^4.1.9",
+    "babel-plugin-styled-components": "^2.1.4",
+    "dotenv": "^16.4.5",
+    "gatsby": "^5.13.3",
+    "gatsby-plugin-image": "^3.13.1",
+    "gatsby-plugin-manifest": "^5.13.1",
+    "gatsby-plugin-offline": "^6.13.2",
+    "gatsby-plugin-sharp": "^5.13.1",
+    "gatsby-plugin-sitemap": "^6.13.1",
+    "gatsby-plugin-styled-components": "^6.13.1",
+    "gatsby-source-filesystem": "^5.13.1",
+    "gatsby-source-wordpress": "^7.14.0",
+    "gatsby-transformer-sharp": "^5.13.1",
+    "lodash": "^4.17.21",
+    "lodash.throttle": "^4.1.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.1.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.19",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "@types/serviceworker": "^0.0.91",
+    "typescript": "^5.3.3"
+  }
+}
