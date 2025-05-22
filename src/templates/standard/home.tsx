@@ -3,7 +3,7 @@ import { IPage } from "../../types/standard";
 import { Layout, Loading } from "../../components/Layout";
 import Button from "../../components/atoms/Button";
 import { useContextState, IAppState, AppCtx } from "../../components/contexted";
-import { PageHeader } from "../../components/molecules";
+import { Hero, PageHeader } from "../../components/molecules";
 
 interface HomeProps {
   pageContext: {
@@ -20,8 +20,7 @@ const HomePage: React.FC<HomeProps> = ({ pageContext }): JSX.Element => {
   return (
     <Layout>
       <PageHeader title={hero.title[language]} />
-
-      <div dangerouslySetInnerHTML={{ __html: hero.description[language] }} />
+      <Hero fullname={hero.fullname} description={hero.description[language]} />
     </Layout>
   );
 };
