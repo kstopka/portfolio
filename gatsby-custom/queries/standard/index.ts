@@ -22,6 +22,11 @@ class StandardResourceClass {
                   pl
                   en
                 }
+                subtitle {
+                  pl
+                  en
+                }
+                fullname
                 description {
                   pl
                   en

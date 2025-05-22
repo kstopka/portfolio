@@ -3,6 +3,7 @@ import { IPage } from "../../types/standard";
 import { Layout, Loading } from "../../components/Layout";
 import Button from "../../components/atoms/Button";
 import { useContextState, IAppState, AppCtx } from "../../components/contexted";
+import { PageHeader } from "../../components/molecules";
 
 interface HomeProps {
   pageContext: {
@@ -10,7 +11,7 @@ interface HomeProps {
   };
 }
 
-const HomePage: React.FC<HomeProps> = ({ pageContext }: HomeProps) => {
+const HomePage: React.FC<HomeProps> = ({ pageContext }): JSX.Element => {
   const { hero } = pageContext.page.acfHome;
   const { language } = useContextState<IAppState>(AppCtx, ["language"]);
 
@@ -18,13 +19,9 @@ const HomePage: React.FC<HomeProps> = ({ pageContext }: HomeProps) => {
 
   return (
     <Layout>
-      <h1>{hero.title[language]}</h1>
+      <PageHeader title={hero.title[language]} />
+
       <div dangerouslySetInnerHTML={{ __html: hero.description[language] }} />
-      <Button
-        onClick={() => console.log("test")}
-        label="Test"
-        type="submit"
-      ></Button>
     </Layout>
   );
 };

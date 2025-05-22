@@ -16,6 +16,8 @@ export interface IPage {
 export interface IAcfHome {
   hero: {
     title: TranslateItem;
+    subtitle: TranslateItem;
+    fullname: string;
     description: TranslateItem;
   };
 }
