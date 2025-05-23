@@ -3,7 +3,7 @@ import { IPage } from "../../types/standard";
 import { Layout, Loading } from "../../components/Layout";
 import Button from "../../components/atoms/Button";
 import { useContextState, IAppState, AppCtx } from "../../components/contexted";
-import { Hero, PageHeader } from "../../components/molecules";
+import { ColourPalette, Hero, PageHeader } from "../../components/molecules";
 
 interface HomeProps {
   pageContext: {
@@ -19,6 +19,7 @@ const HomePage: React.FC<HomeProps> = ({ pageContext }): JSX.Element => {
 
   return (
     <Layout>
+      {/* <ColourPalette /> */}
       <PageHeader title={hero.title[language]} />
       <Hero fullname={hero.fullname} description={hero.description[language]} />
     </Layout>
