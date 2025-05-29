@@ -6,8 +6,6 @@ export const baseTheme = {
     paddingX: "108px",
     paddingXMobile: "16px",
     navigationHeight: "88px",
-    timerHeight: "24px",
-    navigationAndTimerHeight: "112px",
   },
   breakpoints: {
     sm: "768px",

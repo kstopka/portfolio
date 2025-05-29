@@ -20,7 +20,7 @@ const HomePage: React.FC<HomeProps> = ({ pageContext }): JSX.Element => {
   return (
     <Layout>
       {/* <ColourPalette /> */}
-      <PageHeader title={hero.title[language]} />
+      <PageHeader title={hero.title[language]} secendaryBackground />
       <Hero fullname={hero.fullname} description={hero.description[language]} />
     </Layout>
   );

@@ -10,7 +10,6 @@ export const PageHeaderWrapper = styled.div<{
 
   padding: 2rem 0;
   margin: 0 auto;
-  max-width: ${(props) => props.theme.layout.maxWidth};
   width: 100%;
   text-align: ${(props) => (props.centered ? "center" : "left")};
 `;
