@@ -5,15 +5,17 @@ import { SectionWrapper } from "../";
 
 const Hero: React.FC<HeroProps> = ({
   fullname,
+  title,
   description,
   secendaryBackground,
 }): JSX.Element => (
   <SectionWrapper secendaryBackground={secendaryBackground}>
     <S.HeroWrapper>
-      <div>
-        <h2>{fullname}</h2>
-      </div>
-      <div dangerouslySetInnerHTML={{ __html: description }} />
+      <S.TextWrapper>
+        <S.Title>{title}</S.Title>
+        <S.FullName>{fullname}</S.FullName>
+        <div dangerouslySetInnerHTML={{ __html: description }} />
+      </S.TextWrapper>
     </S.HeroWrapper>
   </SectionWrapper>
 );

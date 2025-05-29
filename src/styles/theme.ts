@@ -6,6 +6,7 @@ export const baseTheme = {
     paddingX: "108px",
     paddingXMobile: "16px",
     navigationHeight: "88px",
+    sectionWrapperWidth: "552px",
   },
   breakpoints: {
     sm: "768px",
