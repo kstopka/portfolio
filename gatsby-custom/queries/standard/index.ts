@@ -16,13 +16,13 @@ class StandardResourceClass {
             slug
             title
             content
-            acfHome {
-              hero {
+            acfAboutme {
+              bio {
+                pl
+                en
+              }
+              hobby {
                 title {
-                  pl
-                  en
-                }
-                subtitle {
                   pl
                   en
                 }
@@ -30,6 +30,27 @@ class StandardResourceClass {
                   pl
                   en
                 }
+                image {
+                  node {
+                    title
+                    altText
+                    sourceUrl
+                  }
+                }
+              }
+            }
+            acfPageheader {
+              title {
+                pl
+                en
+              }
+              subtitle {
+                pl
+                en
+              }
+              description {
+                pl
+                en
               }
             }
             acfContact {

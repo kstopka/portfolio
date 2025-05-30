@@ -9,16 +9,23 @@ export interface IPage {
   slug: string;
   title: string;
   content: string;
-  acfHome: IAcfHome;
   acfContact: IAcfContact;
+  acfPageheader: IAcfPageheader;
+  acfAboutme: IAcfAboutme;
 }
 
-export interface IAcfHome {
-  hero: {
+export interface IAcfAboutme {
+  bio: TranslateItem;
+  hobby: {
     title: TranslateItem;
-    subtitle: TranslateItem;
-    fullname: string;
     description: TranslateItem;
+    image: {
+      node: {
+        title: string;
+        altText: string;
+        sourceUrl: string;
+      };
+    };
   };
 }
 export interface IAcfContact {
@@ -31,4 +38,10 @@ export interface IAcfContact {
     city: TranslateItem;
     country: TranslateItem;
   };
+}
+
+export interface IAcfPageheader {
+  title: TranslateItem;
+  subtitle: TranslateItem;
+  description: TranslateItem;
 }

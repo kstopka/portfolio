@@ -16,7 +16,7 @@ const mockPersonalInfo: Pick<
   IPage[`acfContact`][`contact`],
   "fullname" | "github" | "linkedin"
 > = {
-  fullname: "Full NAme",
+  fullname: "Full Name",
   github: "github",
   linkedin: "linkedin",
 };
@@ -24,20 +24,20 @@ const mockPersonalInfo: Pick<
 const HomePage: React.FC<HomeProps> = ({ pageContext }): JSX.Element => {
   const { fullname, github, linkedin } =
     pageContext.personalInfo || mockPersonalInfo;
-  const { hero } = pageContext.page.acfHome;
+  const { title, description } = pageContext.page.acfPageheader;
   const { language } = useContextState<IAppState>(AppCtx, ["language"]);
 
-  if (!hero || !language) return <Loading />;
+  if (!pageContext || !language) return <Loading />;
 
   return (
     <Layout>
       {/* <ColourPalette /> */}
       <Hero
-        title={hero.title[language]}
+        title={title[language]}
         fullname={fullname}
         github={github}
         linkedin={linkedin}
-        description={hero.description[language]}
+        description={description[language]}
         secendaryBackground
       />
     </Layout>

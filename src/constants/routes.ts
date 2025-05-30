@@ -1,7 +1,7 @@
 // INFO: URL_PATHS
 const URL_PATHS = {
   home: { pl: "Strona Główna", en: "Home", path: "/" },
-  about: { pl: "O mnie", en: "About", path: "/about" },
+  about: { pl: "O mnie", en: "About Me", path: "/aboutme" },
   contact: { pl: "Kontakt", en: "Contact", path: "/contact" },
 };
 
