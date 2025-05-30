@@ -8,7 +8,8 @@ class StandardPagesGeneratorClass {
   simplePage = (
     createPage: Actions["createPage"],
     pages: IPage[],
-    slug: string
+    slug: string,
+    personalInfo?: IPage[`acfContact`][`contact`]
   ) => {
     const Page = path.resolve(`./src/templates/standard/${slug}.tsx`);
     const Data = pages.find((el) => el.slug === `${slug}`);
@@ -18,6 +19,7 @@ class StandardPagesGeneratorClass {
       component: slash(Page),
       context: {
         page: Data,
+        personalInfo,
       },
     });
   };

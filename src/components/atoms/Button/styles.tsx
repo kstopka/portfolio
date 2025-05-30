@@ -45,6 +45,7 @@ export const CTAButton = styled.button`
   border: none;
   padding: 0.6rem 1.2rem;
   font-size: ${(props) => props.theme.fonts.size.medium};
+  min-width: 120px;
 
   &:hover:not(:disabled) {
     background-color: ${(props) => props.theme.colors.primary[70]};

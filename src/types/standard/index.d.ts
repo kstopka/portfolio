@@ -23,7 +23,11 @@ export interface IAcfHome {
 }
 export interface IAcfContact {
   contact: {
+    fullname: string;
+    telephone: string;
     email: string;
+    github: string;
+    linkedin: string;
     city: TranslateItem;
     country: TranslateItem;
   };

@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
 
   return (
     <S.Nav>
-      <S.LogoLink to={URL_PATHS.home.path}>MyApp</S.LogoLink>
+      <S.LogoLink to={URL_PATHS.home.path}>kstopka</S.LogoLink>
       <S.HamburgerButton onClick={toggleMobileMenu}>
         <span></span>
         <span></span>

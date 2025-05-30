@@ -26,7 +26,6 @@ class StandardResourceClass {
                   pl
                   en
                 }
-                fullname
                 description {
                   pl
                   en
@@ -35,7 +34,11 @@ class StandardResourceClass {
             }
             acfContact {
               contact {
+                fullname
                 email
+                telephone
+                github
+                linkedin
                 city {
                   pl
                   en

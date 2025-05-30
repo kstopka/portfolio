@@ -8,10 +8,22 @@ import { ColourPalette, Hero, PageHeader } from "../../components/molecules";
 interface HomeProps {
   pageContext: {
     page: IPage;
+    personalInfo?: IPage[`acfContact`][`contact`];
   };
 }
 
+const mockPersonalInfo: Pick<
+  IPage[`acfContact`][`contact`],
+  "fullname" | "github" | "linkedin"
+> = {
+  fullname: "Full NAme",
+  github: "github",
+  linkedin: "linkedin",
+};
+
 const HomePage: React.FC<HomeProps> = ({ pageContext }): JSX.Element => {
+  const { fullname, github, linkedin } =
+    pageContext.personalInfo || mockPersonalInfo;
   const { hero } = pageContext.page.acfHome;
   const { language } = useContextState<IAppState>(AppCtx, ["language"]);
 
@@ -22,7 +34,9 @@ const HomePage: React.FC<HomeProps> = ({ pageContext }): JSX.Element => {
       {/* <ColourPalette /> */}
       <Hero
         title={hero.title[language]}
-        fullname={hero.fullname}
+        fullname={fullname}
+        github={github}
+        linkedin={linkedin}
         description={hero.description[language]}
         secendaryBackground
       />

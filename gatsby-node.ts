@@ -13,8 +13,12 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
   if (!pages) return console.log(`pages undefined in create page`);
 
+  // Create personal info
+  const contactPage = pages.find((el) => el.slug === `contact`);
+  const personalInfo = contactPage?.acfContact?.contact;
+
   // Create to Single pages
   pages.forEach(({ slug }) =>
-    StandardPagesGenerator.simplePage(createPage, pages, slug)
+    StandardPagesGenerator.simplePage(createPage, pages, slug, personalInfo)
   );
 };
