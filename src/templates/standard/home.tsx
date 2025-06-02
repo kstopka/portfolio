@@ -30,7 +30,7 @@ const HomePage: React.FC<HomeProps> = ({ pageContext }): JSX.Element => {
   if (!pageContext || !language) return <Loading />;
 
   return (
-    <Layout>
+    <Layout personalInfo={pageContext.personalInfo}>
       {/* <ColourPalette /> */}
       <Hero
         title={title[language]}

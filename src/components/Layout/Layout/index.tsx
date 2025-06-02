@@ -7,15 +7,19 @@ import theme from "../../../styles/theme";
 import { AppCtx, useContextState } from "../../contexted";
 import { IAppState } from "../../contexted/App/types";
 import { GlobalStyles } from "../../../styles/global";
-import Navbar from "../../molecules/Navbar";
+import { Navbar } from "../../molecules";
+import { Footer } from "../../molecules";
+import { IPage } from "../../../types/standard";
 
 interface ILayout {
   children: React.ReactNode;
+  personalInfo?: IPage[`acfContact`][`contact`];
 }
 
-const Layout: React.FC<ILayout> = ({ children }): JSX.Element => {
+const Layout: React.FC<ILayout> = ({ children, personalInfo }): JSX.Element => {
   const location = useLocation();
   const { theme: themeValue } = useContextState<IAppState>(AppCtx, ["theme"]);
+  console.log("personalInfo", personalInfo);
 
   return (
     <ThemeProvider theme={theme[themeValue]}>
@@ -23,9 +27,7 @@ const Layout: React.FC<ILayout> = ({ children }): JSX.Element => {
       <S.Layout>
         <Navbar />
         <S.Main>{children}</S.Main>
-        <div className="footer">
-          <p>Foooter</p>
-        </div>
+        <Footer personalInfo={personalInfo} />
       </S.Layout>
     </ThemeProvider>
   );

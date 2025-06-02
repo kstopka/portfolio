@@ -4,6 +4,11 @@ type TranslateItem = {
   pl: string;
   en: string;
 };
+
+export type TranslateContent = {
+  [key: string]: TranslateItem;
+};
+
 export interface IPage {
   id: string;
   slug: string;

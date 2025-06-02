@@ -69,6 +69,17 @@ export const GlobalStyles = createGlobalStyle`
         small{
             font-size: ${(props) => props.theme.fonts.size.small};
         }
+
+        svg {
+            max-width: 24px;
+            max-height: 24px;
+            
+            path {
+                fill: ${({ theme }) => theme.colors.neutral[10]};
+            }
+        }
+
+        
     }
 
     #___gatsby {

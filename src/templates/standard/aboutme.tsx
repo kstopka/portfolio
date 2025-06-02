@@ -25,7 +25,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ pageContext }): JSX.Element => {
   if (!pageContext || !language) return <Loading />;
 
   return (
-    <Layout>
+    <Layout personalInfo={pageContext.personalInfo}>
       <PageHeader title={title[language]} />
     </Layout>
   );
