@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import * as S from "./styles";
-import { URL_PATHS_Arr, URL_PATHS } from "../../constants";
+import { URL_PATHS_Arr, URL_PATHS } from "../../../constants";
 import {
   AppCtx,
   useActions,
   useContextState,
   IAppState,
   IAppActions,
-} from "../contexted";
+} from "../../contexted";
 import { translateTheme } from "./translate";
-import Button from "../atoms/Button";
+import Button from "../../atoms/Button";
 
 const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -47,12 +47,22 @@ const Navbar: React.FC = () => {
           </S.NavLink>
         ))}
         <Button
-          onClick={toggleTheme}
+          onClick={() => {
+            toggleTheme();
+            if (isMobileMenuOpen) {
+              setIsMobileMenuOpen(false);
+            }
+          }}
           label={translateTheme[themeValue][language].toUpperCase()}
           variant="menuToggle"
         />
         <Button
-          onClick={toggleLanguage}
+          onClick={() => {
+            toggleLanguage();
+            if (isMobileMenuOpen) {
+              setIsMobileMenuOpen(false);
+            }
+          }}
           label={language.toUpperCase()}
           variant="menuToggle"
         />

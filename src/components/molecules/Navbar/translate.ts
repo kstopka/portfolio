@@ -1,4 +1,4 @@
-import { Theme, Language } from "../contexted/App/types";
+import { Theme, Language } from "../../contexted/App/types";
 
 type TranslateTheme = {
   [key in Theme]: {

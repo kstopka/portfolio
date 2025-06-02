@@ -7,7 +7,7 @@ import theme from "../../../styles/theme";
 import { AppCtx, useContextState } from "../../contexted";
 import { IAppState } from "../../contexted/App/types";
 import { GlobalStyles } from "../../../styles/global";
-import Navbar from "../../Navbar";
+import Navbar from "../../molecules/Navbar";
 
 interface ILayout {
   children: React.ReactNode;
