@@ -3,7 +3,12 @@ import { IPage } from "../../types/standard";
 import { Layout, Loading } from "../../components/Layout";
 import Button from "../../components/atoms/Button";
 import { useContextState, IAppState, AppCtx } from "../../components/contexted";
-import { ColourPalette, Hero, PageHeader } from "../../components/molecules";
+import {
+  ColourPalette,
+  Hero,
+  HomeAbout,
+  PageHeader,
+} from "../../components/molecules";
 
 interface HomeProps {
   pageContext: {
@@ -40,6 +45,7 @@ const HomePage: React.FC<HomeProps> = ({ pageContext }): JSX.Element => {
         description={description[language]}
         secendaryBackground
       />
+      <HomeAbout />
     </Layout>
   );
 };
