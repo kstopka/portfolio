@@ -19,7 +19,6 @@ interface ILayout {
 const Layout: React.FC<ILayout> = ({ children, personalInfo }): JSX.Element => {
   const location = useLocation();
   const { theme: themeValue } = useContextState<IAppState>(AppCtx, ["theme"]);
-  console.log("personalInfo", personalInfo);
 
   return (
     <ThemeProvider theme={theme[themeValue]}>

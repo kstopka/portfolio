@@ -4,8 +4,10 @@ export const baseTheme = {
   layout: {
     maxWidth: "1440px",
     paddingX: "108px",
+    paddingY: "48px",
     paddingXMobile: "16px",
-    navigationHeight: "88px",
+    paddingYMobile: "16px",
+    navigationHeight: "78px",
     sectionWrapperWidth: "552px",
   },
   breakpoints: {

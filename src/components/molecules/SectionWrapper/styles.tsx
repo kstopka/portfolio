@@ -8,7 +8,11 @@ export const SectionWrapperWrapper = styled.div<{
       ? theme.colors.secondaryBackground
       : theme.colors.background};
 
-  padding: 0 ${(props) => props.theme.layout.paddingXMobile};
+  padding-left: ${({ theme }) => theme.layout.paddingXMobile};
+  padding-right: ${({ theme }) => theme.layout.paddingXMobile};
+  padding-top: ${({ theme }) => theme.layout.paddingYMobile};
+  padding-bottom: ${({ theme }) => theme.layout.paddingYMobile};
+
   width: 100%;
 
   > div {
@@ -16,6 +20,9 @@ export const SectionWrapperWrapper = styled.div<{
   }
 
   @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
-    padding: 0 ${(props) => props.theme.layout.paddingX};
+    padding-left: ${({ theme }) => theme.layout.paddingX};
+    padding-right: ${({ theme }) => theme.layout.paddingX};
+    padding-top: ${({ theme }) => theme.layout.paddingY};
+    padding-bottom: ${({ theme }) => theme.layout.paddingY};
   }
 `;

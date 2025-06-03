@@ -16,7 +16,19 @@ const iconContainer = css`
 
 export const Footer = styled.footer`
   ${flexColumn}
-  padding: 20px 0;
+  padding-left: ${({ theme }) => theme.layout.paddingXMobile};
+  padding-right: ${({ theme }) => theme.layout.paddingXMobile};
+  padding-top: ${({ theme }) => theme.layout.paddingYMobile};
+  padding-bottom: ${({ theme }) => theme.layout.paddingYMobile};
+
+  width: 100%;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
+    padding-left: ${({ theme }) => theme.layout.paddingX};
+    padding-right: ${({ theme }) => theme.layout.paddingX};
+    padding-top: ${({ theme }) => theme.layout.paddingY};
+    padding-bottom: ${({ theme }) => theme.layout.paddingY};
+  }
 `;
 export const FooterWrapper = styled.div`
   ${flexColumn}

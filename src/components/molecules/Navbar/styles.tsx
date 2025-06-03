@@ -11,6 +11,7 @@ export const Nav = styled.nav`
   background-color: ${(props) => props.theme.colors.background};
   border-bottom: 1px solid ${(props) => props.theme.colors.neutral[80]};
   position: relative;
+  min-height: ${({ theme }) => theme.layout.navigationHeight};
 
   @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
     flex-direction: row;
