@@ -4,21 +4,33 @@ import { FooterProps } from "./types";
 import { translateContent } from "./translate";
 import { useContextState, IAppState, AppCtx } from "../../contexted";
 import { MailSVG, LinkedinSVG, GithubSVG } from "../../../assets/symbols";
+import { Link, navigate } from "gatsby";
 
 const Footer: React.FC<FooterProps> = ({ personalInfo }) => {
   const { language } = useContextState<IAppState>(AppCtx, ["language"]);
   return (
     <S.Footer>
-      <S.FooterText>
-        {`© ${new Date().getFullYear()} ${personalInfo?.fullname}. ${
-          translateContent.rights[language]
-        }.`}
-      </S.FooterText>
-      <S.IconsWrapper>
-        <MailSVG />
-        <LinkedinSVG />
-        <GithubSVG />
-      </S.IconsWrapper>
+      <S.FooterWrapper>
+        <S.FooterText>
+          {`© ${new Date().getFullYear()} ${personalInfo?.fullname}. ${
+            translateContent.rights[language]
+          }.`}
+        </S.FooterText>
+        <S.ContactWrapper>
+          <S.IconContainer>
+            <MailSVG />
+          </S.IconContainer>
+          <p>{personalInfo?.email}</p>
+        </S.ContactWrapper>
+        <S.IconsWrapper>
+          <Link to={`https://www.linkedin.com/in/${personalInfo?.linkedin}`}>
+            <LinkedinSVG />
+          </Link>
+          <Link to={`https://github.com/${personalInfo?.github}`}>
+            <GithubSVG />
+          </Link>
+        </S.IconsWrapper>
+      </S.FooterWrapper>
     </S.Footer>
   );
 };
