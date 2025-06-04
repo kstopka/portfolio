@@ -1,19 +1,20 @@
 import React from "react";
 import { HeadFC, PageProps } from "gatsby";
-import { Layout } from "../components/Layout";
+
 import { useContextState, IAppState, AppCtx } from "../components/contexted";
 import { navigate } from "gatsby";
 import { URL_PATHS } from "../constants";
 import Button from "../components/atoms/Button";
+import Layout from "../components/Layout";
 
 const TranslateNotFoundPage = {
   title: {
-    PL: "Strona nie znaleziona",
-    EN: "Page not found",
+    pl: "Strona nie znaleziona",
+    en: "Page not found",
   },
   description: {
-    PL: "Nie znaleziono strony, która mogła by być wyświetlona. Kliknij aby wrócić do strony głównej.",
-    EN: "The page you are looking for could not be found. Click to go back to the home page.",
+    pl: "Nie znaleziono strony, która mogła by być wyświetlona. Kliknij aby wrócić do strony głównej.",
+    en: "The page you are looking for could not be found. Click to go back to the home page.",
   },
 };
 const NotFoundPage: React.FC<PageProps> = () => {

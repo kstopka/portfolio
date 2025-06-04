@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import HomeAbout from "./HomeAbout";
 import Head from "./Head";
+import Loading from "./Loading";
 
 export {
   PageHeader,
@@ -16,4 +17,5 @@ export {
   Navbar,
   HomeAbout,
   Head,
+  Loading,
 };

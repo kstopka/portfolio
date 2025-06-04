@@ -1,8 +1,8 @@
 import React from "react";
 import { IPage } from "../../types/standard";
-import { Layout, Loading } from "../../components/Layout";
 import { AppCtx, IAppState, useContextState } from "../../components/contexted";
-import { PageHeader } from "../../components/molecules";
+import { PageHeader, Loading } from "../../components/molecules";
+import Layout from "../../components/Layout";
 
 interface ContactProps {
   pageContext: {

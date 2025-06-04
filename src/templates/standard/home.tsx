@@ -1,6 +1,5 @@
 import React from "react";
 import { IPage } from "../../types/standard";
-import { Layout, Loading } from "../../components/Layout";
 import Button from "../../components/atoms/Button";
 import { useContextState, IAppState, AppCtx } from "../../components/contexted";
 import {
@@ -8,7 +7,9 @@ import {
   Hero,
   HomeAbout,
   PageHeader,
+  Loading,
 } from "../../components/molecules";
+import Layout from "../../components/Layout";
 
 interface HomeProps {
   pageContext: {
