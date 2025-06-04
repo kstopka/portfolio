@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation } from "@reach/router";
-import * as S from "./Layout/styles";
+import * as S from "./styles";
 
 import { ThemeProvider } from "styled-components";
 import theme from "../../styles/theme";
