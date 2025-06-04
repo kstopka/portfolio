@@ -18,7 +18,7 @@ export const baseTheme = {
   },
   fonts: {
     family: {
-      main: "Cabin",
+      main: "Livvic",
       secondary: "Cabin",
     },
     size: {

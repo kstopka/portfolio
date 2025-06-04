@@ -18,6 +18,7 @@ export const GlobalStyles = createGlobalStyle`
 
     body {
         font-family: ${({ theme }) => theme.fonts.family.main};
+        font-style:  normal;
         overflow: hidden;
         overflow-y: scroll;
         color: ${(props) => props.theme.colors.neutral[10]};

@@ -7,7 +7,7 @@ import theme from "../../../styles/theme";
 import { AppCtx, useContextState } from "../../contexted";
 import { IAppState } from "../../contexted/App/types";
 import { GlobalStyles } from "../../../styles/global";
-import { Navbar } from "../../molecules";
+import { Head, Navbar } from "../../molecules";
 import { Footer } from "../../molecules";
 import { IPage } from "../../../types/standard";
 
@@ -24,6 +24,7 @@ const Layout: React.FC<ILayout> = ({ children, personalInfo }): JSX.Element => {
     <ThemeProvider theme={theme[themeValue]}>
       <GlobalStyles />
       <S.Layout>
+        <Head />
         <Navbar />
         <S.Main>{children}</S.Main>
         <Footer personalInfo={personalInfo} />

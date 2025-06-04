@@ -5,6 +5,7 @@ import SectionWrapper from "./SectionWrapper";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import HomeAbout from "./HomeAbout";
+import Head from "./Head";
 
 export {
   PageHeader,
@@ -14,4 +15,5 @@ export {
   Footer,
   Navbar,
   HomeAbout,
+  Head,
 };
