@@ -2,15 +2,21 @@ import styled from "styled-components";
 import { flexColumn, flexRow } from "../../../styles/mixins";
 
 export const HomeAboutWrapper = styled.div`
-  ${flexColumn};
+  ${flexRow}
+  flex-wrap: wrap;
+  gap: 16px;
 `;
 
 export const ItemWrapper = styled.div`
   ${flexColumn}
-  border: 1px solid ${({ theme }) => theme.colors.neutral[30]};
+  gap: 12px;
 
-  max-width: ${({ theme }) => theme.layout.sectionWrapperWidth};
-  max-height: ${({ theme }) => theme.layout.sectionWrapperWidth};
+  border: 1px solid ${({ theme }) => theme.colors.neutral[30]};
+  padding: 16px;
+  width: 328px;
+  height: 328px;
+
+  text-align: center;
 `;
 
 export const IconWrapper = styled.div`

@@ -1,8 +1,11 @@
 import styled from "styled-components";
+import { flexRow } from "../../../styles/mixins";
 
 export const SectionWrapperWrapper = styled.div<{
   secendaryBackground: boolean | undefined;
 }>`
+  ${flexRow}
+
   background: ${({ theme, secendaryBackground }) =>
     secendaryBackground
       ? theme.colors.secondaryBackground
