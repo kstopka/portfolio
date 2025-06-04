@@ -31,6 +31,7 @@ const HomePage: React.FC<HomeProps> = ({ pageContext }): JSX.Element => {
   const { fullname, github, linkedin } =
     pageContext.personalInfo || mockPersonalInfo;
   const { title, description } = pageContext.page.acfPageheader;
+  const { aboutMe } = pageContext.page.acfHome;
   const { language } = useContextState<IAppState>(AppCtx, ["language"]);
 
   if (!pageContext || !language) return <Loading />;
@@ -46,7 +47,7 @@ const HomePage: React.FC<HomeProps> = ({ pageContext }): JSX.Element => {
         description={description[language]}
         secendaryBackground
       />
-      <HomeAbout />
+      <HomeAbout aboutMe={aboutMe} />
     </Layout>
   );
 };

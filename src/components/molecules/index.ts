@@ -7,6 +7,7 @@ import Navbar from "./Navbar";
 import HomeAbout from "./HomeAbout";
 import Head from "./Head";
 import Loading from "./Loading";
+import ContinuousSlider from "./ContinuousSlider";
 
 export {
   PageHeader,
@@ -18,4 +19,5 @@ export {
   HomeAbout,
   Head,
   Loading,
+  ContinuousSlider,
 };

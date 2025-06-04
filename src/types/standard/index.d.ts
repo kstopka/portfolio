@@ -17,8 +17,14 @@ export interface IPage {
   acfContact: IAcfContact;
   acfPageheader: IAcfPageheader;
   acfAboutme: IAcfAboutme;
+  acfHome: IAcfHome;
 }
 
+export interface IAcfHome {
+  aboutMe: {
+    technologies: { technology: string }[];
+  };
+}
 export interface IAcfAboutme {
   bio: TranslateItem;
   hobby: {

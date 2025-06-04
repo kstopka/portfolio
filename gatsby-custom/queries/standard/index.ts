@@ -16,6 +16,13 @@ class StandardResourceClass {
             slug
             title
             content
+            acfHome {
+              aboutMe {
+                technologies {
+                  technology
+                }
+              }
+            }
             acfAboutme {
               bio {
                 pl
