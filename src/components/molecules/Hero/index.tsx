@@ -16,10 +16,12 @@ const Hero: React.FC<HeroProps> = ({
   <SectionWrapper secendaryBackground={secendaryBackground}>
     <S.HeroWrapper>
       <S.ContentWrapper>
-        <S.Title>{title}</S.Title>
         <S.FullName>{fullname}</S.FullName>
-        <div dangerouslySetInnerHTML={{ __html: description }} />
-        <S.ButtonsWrapper>
+        <S.DescriptionWrapper>
+          <S.Title>{title}</S.Title>
+          <S.Dag dangerouslySetInnerHTML={{ __html: description }} />
+        </S.DescriptionWrapper>
+        {/* <S.ButtonsWrapper>
           <Button
             label="GitHub"
             onClick={() => navigate(`https://github.com/${github}`)}
@@ -28,7 +30,7 @@ const Hero: React.FC<HeroProps> = ({
             label="LinkedIn"
             onClick={() => navigate(`https://www.linkedin.com/in/${linkedin}`)}
           />
-        </S.ButtonsWrapper>
+        </S.ButtonsWrapper> */}
       </S.ContentWrapper>
     </S.HeroWrapper>
   </SectionWrapper>
