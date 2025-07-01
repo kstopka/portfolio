@@ -1,0 +1,18 @@
+version: "3"
+services:
+  gatsby:
+    image: gatsby-portfolio-dev # Nazwa obrazu, który zbudowałeś
+    build:
+      context: . # Będzie budować z bieżącego katalogu
+    volumes:
+      - .:/app # Mapowanie lokalnego katalogu projektu do katalogu w kontenerze
+      - /app/node_modules # Zachowanie node_modules osobno
+    ports:
+      - "8000:8000" # Mapowanie portów (8000 na hoście do 8000 w kontenerze)
+    command: npm run develop -- --host 0.0.0.0 # Komenda uruchamiająca Gatsby w trybie deweloperskim
+    environment:
+      - NODE_ENV=development # Zmienna środowiskowa, może być przydatna w trybie deweloperskim
+
+# Dodatkowe usługi, jeśli są potrzebne (np. baza danych, jeśli w przyszłości będzie wymagane)
+# volumes:
+#   db-data:
