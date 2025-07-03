@@ -8,6 +8,7 @@ import HomeAbout from "./HomeAbout";
 import Head from "./Head";
 import Loading from "./Loading";
 import ContinuousSlider from "./ContinuousSlider";
+import AboutContent from "./AboutContent";
 
 export {
   PageHeader,
@@ -20,4 +21,5 @@ export {
   Head,
   Loading,
   ContinuousSlider,
+  AboutContent,
 };

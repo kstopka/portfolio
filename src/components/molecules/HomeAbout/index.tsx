@@ -1,7 +1,7 @@
 import React from "react";
 import * as S from "./styles";
 import { HomeAboutProps } from "./types";
-import { ContinuousSlider, SectionWrapper } from "..";
+import { AboutContent, ContinuousSlider, SectionWrapper } from "..";
 import { GraduateCapSVG } from "../../../assets/symbols";
 
 const HomeAbout: React.FC<HomeAboutProps> = ({
@@ -10,7 +10,11 @@ const HomeAbout: React.FC<HomeAboutProps> = ({
 }): JSX.Element => {
   return (
     <SectionWrapper secendaryBackground={secendaryBackground}>
-      <ContinuousSlider technologies={aboutMe.technologies} />
+      <S.HomeAboutWrapper>
+        <ContinuousSlider technologies={aboutMe.technologies} />
+        <AboutContent />
+      </S.HomeAboutWrapper>
+
       {/* <S.HomeAboutWrapper>
       <S.ItemWrapper>
         <S.IconWrapper>
