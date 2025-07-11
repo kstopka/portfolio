@@ -30,8 +30,7 @@ const mockPersonalInfo: Pick<
 const HomePage: React.FC<HomeProps> = ({ pageContext }): JSX.Element => {
   const { fullname, github, linkedin } =
     pageContext.personalInfo || mockPersonalInfo;
-  const { title, description } = pageContext.page.acfPageheader;
-  const { aboutMe } = pageContext.page.acfHome;
+  const { aboutMe, hero } = pageContext.page.acfHome;
   const { language } = useContextState<IAppState>(AppCtx, ["language"]);
 
   if (!pageContext || !language) return <Loading />;
@@ -40,11 +39,10 @@ const HomePage: React.FC<HomeProps> = ({ pageContext }): JSX.Element => {
     <Layout personalInfo={pageContext.personalInfo}>
       {/* <ColourPalette /> */}
       <Hero
-        title={title[language]}
         fullname={fullname}
         github={github}
         linkedin={linkedin}
-        description={description[language]}
+        hero={hero}
         secendaryBackground
       />
       <HomeAbout aboutMe={aboutMe} />

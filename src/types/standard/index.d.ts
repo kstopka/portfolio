@@ -24,6 +24,12 @@ export interface IAcfHome {
   aboutMe: {
     technologies: { technology: string }[];
   };
+  hero: {
+    prefix: TranslateItem;
+    roles: {
+      role: string;
+    }[];
+  };
 }
 export interface IAcfAboutme {
   bio: TranslateItem;

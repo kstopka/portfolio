@@ -6,7 +6,7 @@ import { GraduateCapSVG } from "../../../assets/symbols";
 
 const HomeAbout: React.FC<HomeAboutProps> = ({
   aboutMe,
-  secendaryBackground,
+  secendaryBackground = false,
 }): JSX.Element => {
   return (
     <SectionWrapper secendaryBackground={secendaryBackground}>

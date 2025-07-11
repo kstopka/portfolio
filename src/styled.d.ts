@@ -20,7 +20,6 @@ declare module "styled-components" {
     fonts: {
       family: {
         main: string;
-        w;
         secondary: string;
       };
       size: {

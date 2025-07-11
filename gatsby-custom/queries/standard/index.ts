@@ -22,6 +22,15 @@ class StandardResourceClass {
                   technology
                 }
               }
+              hero {
+                prefix {
+                  pl
+                  en
+                }
+                roles {
+                  role
+                }
+              }
             }
             acfAboutme {
               bio {

@@ -1,8 +1,9 @@
+import { IAcfHome } from "../../../types/standard";
+
 export interface HeroProps {
   fullname: string;
   github: string;
   linkedin: string;
-  title: string;
-  description: string;
+  hero: IAcfHome["hero"];
   secendaryBackground?: boolean;
 }

@@ -20,7 +20,33 @@ export const FullName = styled.h1`
   color: ${({ theme }) => theme.colors.primary[60]};
 `;
 
-export const DescriptionWrapper = styled.div``;
+export const DescriptionWrapper = styled.div`
+  ${flexColumn}
+  align-items: flex-start;
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    ${flexRow}
+    justify-content: flex-start;
+    align-items: center;
+  }
+`;
+export const PrefixTitle = styled.div`
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    margin-right: 10px;
+  }
+`;
+export const SwipperWrapper = styled.div`
+  height: 28px;
+  overflow: hidden;
+
+  .swiper {
+    height: 100%;
+  }
+
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+  }
+`;
 
 export const Dag = styled.span`
   p {
