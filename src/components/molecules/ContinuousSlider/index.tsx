@@ -7,9 +7,11 @@ const ContinuousSlider: React.FC<ContinuousSliderProps> = ({
 }): JSX.Element => (
   <S.MarqueeWrapper>
     <S.MarqueeTrack>
-      {technologies.map(({ technology }, index) => (
-        <S.Slide key={index}>{technology.toUpperCase()}</S.Slide>
-      ))}
+      {[...technologies, ...technologies, ...technologies].map(
+        ({ technology }, index) => (
+          <S.Slide key={index}>{technology.toUpperCase()}</S.Slide>
+        )
+      )}
     </S.MarqueeTrack>
   </S.MarqueeWrapper>
 );

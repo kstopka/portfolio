@@ -3,6 +3,7 @@ import { flexRow } from "../../../styles/mixins";
 
 export const SectionWrapperWrapper = styled.div<{
   secendaryBackground: boolean | undefined;
+  fullWidth: boolean | undefined;
 }>`
   ${flexRow}
 
@@ -11,21 +12,27 @@ export const SectionWrapperWrapper = styled.div<{
       ? theme.colors.secondaryBackground
       : theme.colors.background};
 
-  padding-left: ${({ theme }) => theme.layout.paddingXMobile};
-  padding-right: ${({ theme }) => theme.layout.paddingXMobile};
-  padding-top: ${({ theme }) => theme.layout.paddingYMobile};
-  padding-bottom: ${({ theme }) => theme.layout.paddingYMobile};
-
   width: 100%;
 
-  > div {
-    max-width: ${(props) => props.theme.layout.maxWidth};
-  }
+  ${({ fullWidth, theme }) =>
+    fullWidth
+      ? ``
+      : `
+    
+    padding-left: ${theme.layout.paddingXMobile};
+    padding-right: ${theme.layout.paddingXMobile};
+    padding-top: ${theme.layout.paddingYMobile};
+    padding-bottom: ${theme.layout.paddingYMobile};
+  
+    > div {
+      max-width: ${theme.layout.maxWidth};
+    }
 
-  @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
-    padding-left: ${({ theme }) => theme.layout.paddingX};
-    padding-right: ${({ theme }) => theme.layout.paddingX};
-    padding-top: ${({ theme }) => theme.layout.paddingY};
-    padding-bottom: ${({ theme }) => theme.layout.paddingY};
-  }
+    @media (min-width: ${theme.breakpoints.sm}) {
+      padding-left: ${theme.layout.paddingX};
+      padding-right: ${theme.layout.paddingX};
+      padding-top: ${theme.layout.paddingY};
+      padding-bottom: ${theme.layout.paddingY};
+    }
+    `}
 `;

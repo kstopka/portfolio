@@ -9,6 +9,7 @@ import Head from "./Head";
 import Loading from "./Loading";
 import ContinuousSlider from "./ContinuousSlider";
 import AboutContent from "./AboutContent";
+import HomeTechnologies from "./HomeTechnologies";
 
 export {
   PageHeader,
@@ -22,4 +23,5 @@ export {
   Loading,
   ContinuousSlider,
   AboutContent,
+  HomeTechnologies,
 };

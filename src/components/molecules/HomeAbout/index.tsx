@@ -4,14 +4,10 @@ import { HomeAboutProps } from "./types";
 import { AboutContent, ContinuousSlider, SectionWrapper } from "..";
 import { GraduateCapSVG } from "../../../assets/symbols";
 
-const HomeAbout: React.FC<HomeAboutProps> = ({
-  aboutMe,
-  secendaryBackground = false,
-}): JSX.Element => {
+const HomeAbout: React.FC<HomeAboutProps> = ({ aboutMe }): JSX.Element => {
   return (
-    <SectionWrapper secendaryBackground={secendaryBackground}>
+    <SectionWrapper>
       <S.HomeAboutWrapper>
-        <ContinuousSlider technologies={aboutMe.technologies} />
         <AboutContent />
       </S.HomeAboutWrapper>
 

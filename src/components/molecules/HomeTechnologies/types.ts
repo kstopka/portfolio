@@ -1,5 +1,6 @@
 import { IAcfHome } from "../../../types/standard";
 
-export interface HomeAboutProps {
+export interface HomeTechnologiesProps {
   aboutMe: IAcfHome["aboutMe"];
+  fullWidth?: boolean;
 }

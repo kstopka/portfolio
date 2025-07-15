@@ -8,6 +8,7 @@ import {
   HomeAbout,
   PageHeader,
   Loading,
+  HomeTechnologies,
 } from "../../components/molecules";
 import Layout from "../../components/Layout";
 
@@ -45,6 +46,7 @@ const HomePage: React.FC<HomeProps> = ({ pageContext }): JSX.Element => {
         hero={hero}
         secendaryBackground
       />
+      <HomeTechnologies aboutMe={aboutMe} fullWidth />
       <HomeAbout aboutMe={aboutMe} />
     </Layout>
   );
