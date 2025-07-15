@@ -1,25 +1,22 @@
 import React from "react";
 import * as S from "./styles";
 import { AboutContentProps } from "./types";
-import { SectionWrapper } from "..";
+import { AboutProfessional, SectionWrapper } from "..";
+import { useContextState, IAppState, AppCtx } from "../../contexted";
 
-const AboutContent: React.FC<AboutContentProps> = ({}): JSX.Element => (
-  <S.AboutContentWrapper>
-    <S.Title>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</S.Title>
-    <S.Descriptions>
-      <S.Description>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae
-        voluptas repellendus error modi, earum excepturi provident nesciunt
-        labore dolore tempore! Possimus inventore expedita, consequatur ipsa
-        modi fugit ut reiciendis fugiat?
-      </S.Description>
-      <S.Description>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae
-        voluptas repellendus error modi, earum excepturi provident nesciunt
-        labore dolore tempore! Possimus inventore expedita, consequatur ipsa
-        modi fugit ut reiciendis fugiat?
-      </S.Description>
-    </S.Descriptions>
-  </S.AboutContentWrapper>
-);
+const AboutContent: React.FC<AboutContentProps> = ({
+  content: { title, personally, professionally },
+}): JSX.Element => {
+  const { language } = useContextState<IAppState>(AppCtx, ["language"]);
+
+  return (
+    <S.AboutContentWrapper>
+      <S.Title>{title[language]}</S.Title>
+      <S.Descriptions>
+        <S.Description>{personally[language]}</S.Description>
+        <AboutProfessional professionally={professionally} />
+      </S.Descriptions>
+    </S.AboutContentWrapper>
+  );
+};
 export default AboutContent;

@@ -29,7 +29,7 @@ export const baseTheme = {
       h5: "20px",
       h6: "16px",
       p: "16px",
-      body_20: "18px",
+      medium: "18px",
       small: "13px",
     },
   },

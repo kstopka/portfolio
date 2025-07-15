@@ -8,7 +8,7 @@ const HomeAbout: React.FC<HomeAboutProps> = ({ aboutMe }): JSX.Element => {
   return (
     <SectionWrapper>
       <S.HomeAboutWrapper>
-        <AboutContent />
+        <AboutContent content={aboutMe.content} />
       </S.HomeAboutWrapper>
 
       {/* <S.HomeAboutWrapper>

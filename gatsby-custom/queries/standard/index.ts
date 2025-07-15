@@ -18,6 +18,26 @@ class StandardResourceClass {
             content
             acfHome {
               aboutMe {
+                content {
+                  title {
+                    pl
+                    en
+                  }
+                  personally {
+                    pl
+                    en
+                  }
+                  professionally {
+                    title {
+                      pl
+                      en
+                    }
+                    description {
+                      pl
+                      en
+                    }
+                  }
+                }
                 technologies {
                   technology
                 }

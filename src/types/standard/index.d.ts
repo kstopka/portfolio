@@ -23,6 +23,14 @@ export interface IPage {
 export interface IAcfHome {
   aboutMe: {
     technologies: { technology: string }[];
+    content: {
+      title: TranslateItem;
+      personally: TranslateItem;
+      professionally: {
+        title: TranslateItem;
+        description: TranslateItem;
+      }[];
+    };
   };
   hero: {
     prefix: TranslateItem;

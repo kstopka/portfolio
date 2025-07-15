@@ -30,7 +30,7 @@ declare module "styled-components" {
         h5: string;
         h6: string;
         p: string;
-        body_20: string;
+        medium: string;
         small: string;
       };
     };

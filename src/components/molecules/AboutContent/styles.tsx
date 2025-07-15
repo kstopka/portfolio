@@ -1,5 +1,9 @@
 import styled from "styled-components";
-import { flexColumn, flexRow } from "../../../styles/mixins";
+import {
+  flexColumn,
+  flexRow,
+  descriptionContainer,
+} from "../../../styles/mixins";
 
 export const AboutContentWrapper = styled.div`
   ${flexColumn}
@@ -13,7 +17,12 @@ export const Descriptions = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     ${flexRow}
   }
+
+  > div {
+    max-width: ${({ theme }) => theme.layout.sectionWrapperWidth};
+  }
 `;
 export const Description = styled.div`
-  max-width: ${({ theme }) => theme.layout.sectionWrapperWidth};
+  ${descriptionContainer};
+  height: -webkit-fill-available;
 `;
