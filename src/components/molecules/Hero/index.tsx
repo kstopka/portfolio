@@ -18,7 +18,7 @@ const Hero: React.FC<HeroProps> = ({
 }): JSX.Element => {
   const { language } = useContextState<IAppState>(AppCtx, ["language"]);
   return (
-    <SectionWrapper secendaryBackground={secendaryBackground}>
+    <SectionWrapper secendaryBackground={secendaryBackground} fullWidth>
       <S.HeroWrapper>
         <S.ContentWrapper>
           <S.FullName>{fullname}</S.FullName>

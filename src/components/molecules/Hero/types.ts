@@ -6,4 +6,5 @@ export interface HeroProps {
   linkedin: string;
   hero: IAcfHome["hero"];
   secendaryBackground?: boolean;
+  fullWidth?: boolean;
 }

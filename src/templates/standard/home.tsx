@@ -45,6 +45,7 @@ const HomePage: React.FC<HomeProps> = ({ pageContext }): JSX.Element => {
         linkedin={linkedin}
         hero={hero}
         secendaryBackground
+        fullWidth
       />
       <HomeTechnologies aboutMe={aboutMe} fullWidth />
       <HomeAbout aboutMe={aboutMe} />
