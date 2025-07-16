@@ -20,12 +20,36 @@ const Layout: React.FC<ILayout> = ({ children, personalInfo }): JSX.Element => {
   const location = useLocation();
   const { theme: themeValue } = useContextState<IAppState>(AppCtx, ["theme"]);
 
+  const [navClass, setNavClass] = React.useState("");
+
+  React.useEffect(() => {
+    let lastScrollY = window.pageYOffset;
+
+    const handleScroll = () => {
+      const currentScrollY = window.pageYOffset;
+
+      if (currentScrollY > 300 && currentScrollY > lastScrollY) {
+        setNavClass("nav-hidden");
+      } else if (currentScrollY < lastScrollY) {
+        setNavClass("");
+      } else {
+        setNavClass("");
+      }
+
+      lastScrollY = currentScrollY <= 0 ? 0 : currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <ThemeProvider theme={theme[themeValue]}>
       <GlobalStyles />
       <S.Layout>
         <Head />
-        <Navbar />
+        <Navbar className={navClass} />
         <S.Main>{children}</S.Main>
         <Footer personalInfo={personalInfo} />
       </S.Layout>

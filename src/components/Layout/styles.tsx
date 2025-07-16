@@ -7,6 +7,7 @@ export const Layout = styled.div`
   flex-direction: column;
   justify-content: space-between;
   background-color: ${(props) => props.theme.colors.background};
+  top: ${({ theme }) => theme.layout.navigationHeight};
 `;
 
 export const Main = styled.main`

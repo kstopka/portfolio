@@ -11,7 +11,11 @@ import {
 import { translateTheme } from "./translate";
 import Button from "../../atoms/Button";
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  className?: string;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ className }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme: themeValue, language } = useContextState<IAppState>(AppCtx, [
     "theme",
@@ -27,7 +31,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <S.Nav>
+    <S.Nav className={className}>
       <S.LogoLink to={URL_PATHS.home.path}>kstopka</S.LogoLink>
       <S.HamburgerButton onClick={toggleMobileMenu}>
         <span></span>

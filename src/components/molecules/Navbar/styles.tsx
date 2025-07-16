@@ -2,15 +2,23 @@ import styled from "styled-components";
 import { Link } from "gatsby";
 
 export const Nav = styled.nav`
-  position: relative;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 1rem;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+
   background-color: ${(props) => props.theme.colors.background};
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: top 0.3s;
+
+  padding: 1rem;
   border-bottom: 1px solid ${(props) => props.theme.colors.neutral[80]};
-  position: relative;
   min-height: ${({ theme }) => theme.layout.navigationHeight};
 
   @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
@@ -18,6 +26,11 @@ export const Nav = styled.nav`
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+  }
+
+  &.nav-hidden {
+    top: -${({ theme }) => theme.layout.navigationHeight};
+    transition: top 0.3s;
   }
 `;
 
@@ -30,6 +43,22 @@ export const LogoLink = styled(Link)`
 
   @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
     margin-bottom: 0;
+  }
+
+  &.nav-hidden {
+    top: -${({ theme }) => theme.layout.navigationHeight};
+    transition: top 0.3s;
+  }
+
+  &.nav-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: ${(props) => props.theme.colors.background};
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: top 0.3s;
   }
 `;
 
