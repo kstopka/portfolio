@@ -20,7 +20,7 @@ export const ContentWrapper = styled.div`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
     max-width: ${({ theme }) => theme.layout.sectionWrapperWidth};
-    padding: 0 ${({ theme }) => theme.layout.paddingX};
+    padding: 0;
   }
 `;
 

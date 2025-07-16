@@ -8,7 +8,7 @@ import { Link, navigate } from "gatsby";
 const Footer: React.FC<FooterProps> = ({ personalInfo }) => {
   const { language } = useContextState<IAppState>(AppCtx, ["language"]);
   return (
-    <S.Footer>
+    <S.Footer id="contact">
       <S.FooterWrapper>
         <S.FooterText>
           {`${new Date().getFullYear()} © ${personalInfo?.fullname}`}

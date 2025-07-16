@@ -8,7 +8,7 @@ const HomeTechnologies: React.FC<HomeTechnologiesProps> = ({
   fullWidth = false,
 }): JSX.Element => {
   return (
-    <SectionWrapper fullWidth={fullWidth}>
+    <SectionWrapper fullWidth={fullWidth} id="about">
       <ContinuousSlider technologies={aboutMe.technologies} />
     </SectionWrapper>
   );
