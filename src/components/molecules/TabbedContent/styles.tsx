@@ -7,7 +7,7 @@ import {
 
 import { darken } from "polished";
 
-export const AboutProfessionalWrapper = styled.div`
+export const TabbedContentWrapper = styled.div`
   ${flexColumn};
   width: 100%;
   height: -webkit-fill-available;

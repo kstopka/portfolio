@@ -1,7 +1,7 @@
 import React from "react";
 import * as S from "./styles";
 import { AboutContentProps } from "./types";
-import { AboutProfessional, SectionWrapper } from "..";
+import { TabbedContent, SectionWrapper } from "..";
 import { useContextState, IAppState, AppCtx } from "../../contexted";
 
 const AboutContent: React.FC<AboutContentProps> = ({
@@ -14,7 +14,7 @@ const AboutContent: React.FC<AboutContentProps> = ({
       <S.Title>{title[language]}</S.Title>
       <S.Descriptions>
         <S.Description>{personally[language]}</S.Description>
-        <AboutProfessional professionally={professionally} />
+        <TabbedContent tabs={professionally} />
       </S.Descriptions>
     </S.AboutContentWrapper>
   );

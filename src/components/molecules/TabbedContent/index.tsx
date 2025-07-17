@@ -1,18 +1,16 @@
 import React from "react";
 import * as S from "./styles";
-import { AboutProfessionalProps } from "./types";
+import { TabbedContentProps } from "./types";
 import { useContextState, IAppState, AppCtx } from "../../contexted";
 
-const AboutProfessional: React.FC<AboutProfessionalProps> = ({
-  professionally,
-}): JSX.Element => {
+const TabbedContent: React.FC<TabbedContentProps> = ({ tabs }): JSX.Element => {
   const { language } = useContextState<IAppState>(AppCtx, ["language"]);
   const [activeTab, setActiveTab] = React.useState(0);
 
   return (
-    <S.AboutProfessionalWrapper>
+    <S.TabbedContentWrapper>
       <S.TabsWrapper>
-        {professionally.map((item, index) => (
+        {tabs.map((item, index) => (
           <S.Tab
             key={index}
             onClick={() => setActiveTab(index)}
@@ -23,9 +21,9 @@ const AboutProfessional: React.FC<AboutProfessionalProps> = ({
         ))}
       </S.TabsWrapper>
       <S.DescriptionWrapper>
-        {professionally[activeTab].description[language]}
+        {tabs[activeTab].description[language]}
       </S.DescriptionWrapper>
-    </S.AboutProfessionalWrapper>
+    </S.TabbedContentWrapper>
   );
 };
-export default AboutProfessional;
+export default TabbedContent;

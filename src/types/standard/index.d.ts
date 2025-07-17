@@ -20,16 +20,18 @@ export interface IPage {
   acfHome: IAcfHome;
 }
 
+export interface TabContent {
+  title: TranslateItem;
+  description: TranslateItem;
+}
+
 export interface IAcfHome {
   aboutMe: {
     technologies: { technology: string }[];
     content: {
       title: TranslateItem;
       personally: TranslateItem;
-      professionally: {
-        title: TranslateItem;
-        description: TranslateItem;
-      }[];
+      professionally: TabContent[];
     };
   };
   hero: {
