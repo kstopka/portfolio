@@ -8,7 +8,7 @@ import {
   HomeAbout,
   PageHeader,
   Loading,
-  HomeTechnologies,
+  ContinuousSlider,
 } from "../../components/molecules";
 import Layout from "../../components/Layout";
 
@@ -47,7 +47,12 @@ const HomePage: React.FC<HomeProps> = ({ pageContext }): JSX.Element => {
         secendaryBackground
         fullWidth
       />
-      <HomeTechnologies aboutMe={aboutMe} fullWidth />
+      <ContinuousSlider
+        array={aboutMe.technologies}
+        itemKey="technology"
+        fullWidth
+        id="about"
+      />
       <HomeAbout aboutMe={aboutMe} />
     </Layout>
   );

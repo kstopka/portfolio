@@ -1,3 +1,6 @@
 export interface ContinuousSliderProps {
-  technologies: { technology: string }[];
+  array: Record<string, string>[];
+  itemKey: string;
+  fullWidth?: boolean;
+  id?: string;
 }
