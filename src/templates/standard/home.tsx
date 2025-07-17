@@ -49,6 +49,7 @@ const HomePage: React.FC<HomeProps> = ({ pageContext }): JSX.Element => {
         fullWidth
       />
       <VerticalTimeline
+        colourSettings={{ 10: "20", 20: "30", 30: "40" }}
         timelineContent={{
           title: "test Title",
           description: "test description",
@@ -66,6 +67,16 @@ const HomePage: React.FC<HomeProps> = ({ pageContext }): JSX.Element => {
             {
               title: "test title content 2",
               description: "test description 2",
+              attributes: [
+                { attributeName: "attributeName 1" },
+                { attributeName: "attributeName 2" },
+                { attributeName: "attributeName 3" },
+                { attributeName: "attributeName 4" },
+              ],
+            },
+            {
+              title: "test title content 3",
+              description: "test description 3",
               attributes: [
                 { attributeName: "attributeName 1" },
                 { attributeName: "attributeName 2" },
