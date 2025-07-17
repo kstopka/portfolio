@@ -48,7 +48,34 @@ const HomePage: React.FC<HomeProps> = ({ pageContext }): JSX.Element => {
         secendaryBackground
         fullWidth
       />
-      {/* <VerticalTimeline colourSettings={{ 20: "30" }} /> */}
+      <VerticalTimeline
+        timelineContent={{
+          title: "test Title",
+          description: "test description",
+          contents: [
+            {
+              title: "test title content 1",
+              description: "test description 1",
+              attributes: [
+                { attributeName: "attributeName 1" },
+                { attributeName: "attributeName 2" },
+                { attributeName: "attributeName 3" },
+                { attributeName: "attributeName 4" },
+              ],
+            },
+            {
+              title: "test title content 2",
+              description: "test description 2",
+              attributes: [
+                { attributeName: "attributeName 1" },
+                { attributeName: "attributeName 2" },
+                { attributeName: "attributeName 3" },
+                { attributeName: "attributeName 4" },
+              ],
+            },
+          ],
+        }}
+      />
       <ContinuousSlider
         array={aboutMe.technologies}
         itemKey="technology"
