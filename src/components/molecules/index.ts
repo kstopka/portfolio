@@ -10,6 +10,7 @@ import Loading from "./Loading";
 import ContinuousSlider from "./ContinuousSlider";
 import AboutContent from "./AboutContent";
 import TabbedContent from "./TabbedContent";
+import VerticalTimeline from "./VerticalTimeline";
 
 export {
   PageHeader,
@@ -24,4 +25,5 @@ export {
   ContinuousSlider,
   AboutContent,
   TabbedContent,
+  VerticalTimeline,
 };

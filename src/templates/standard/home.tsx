@@ -9,6 +9,7 @@ import {
   PageHeader,
   Loading,
   ContinuousSlider,
+  VerticalTimeline,
 } from "../../components/molecules";
 import Layout from "../../components/Layout";
 
@@ -47,6 +48,7 @@ const HomePage: React.FC<HomeProps> = ({ pageContext }): JSX.Element => {
         secendaryBackground
         fullWidth
       />
+      {/* <VerticalTimeline colourSettings={{ 20: "30" }} /> */}
       <ContinuousSlider
         array={aboutMe.technologies}
         itemKey="technology"
