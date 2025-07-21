@@ -25,7 +25,26 @@ export interface TabContent {
   description: TranslateItem;
 }
 
+export interface TimelineContent {
+  title: TranslateItem;
+  description: TranslateItem;
+  contents: ContentItem[];
+}
+
+export interface ContentItem {
+  content: {
+    title: TranslateItem;
+    description: TranslateItem;
+    attributes: Attribute[];
+  };
+}
+
+export interface Attribute {
+  attributeName: TranslateItem;
+}
+
 export interface IAcfHome {
+  experience: TimelineContent;
   aboutMe: {
     technologies: { technology: string }[];
     content: {
