@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { flexColumn } from "../../../styles/mixins";
 import { ColourKey } from "./types";
 
@@ -16,6 +16,7 @@ export const ItemsContainer = styled.div<{
     left: calc(100% - 1px);
     height: 100%;
     width: 2px;
+    z-index: 1;
     background: ${({ timelineColors, theme, finalColourSettings }) =>
       `linear-gradient(to bottom, ${theme.colors.background},${timelineColors
         .map((el) => theme.colors.primary[finalColourSettings[el]])
@@ -29,6 +30,7 @@ export const ItemsContainer = styled.div<{
       left: calc(50% - 1px);
       height: 100%;
       width: 2px;
+      z-index: 1;
       background: ${({ timelineColors, theme, finalColourSettings }) =>
         `linear-gradient(to bottom, ${theme.colors.background},${timelineColors
           .map((el) => theme.colors.primary[finalColourSettings[el]])
@@ -72,6 +74,27 @@ export const TimelineElement = styled.div<{
   }
 `;
 
+const fadeInLeft = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(-500px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+const fadeInRight = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(500px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+
 export const Item = styled.div`
   width: 100%;
   display: flex;
@@ -83,6 +106,18 @@ export const Item = styled.div`
 
   &:nth-child(even) {
     justify-content: flex-end;
+  }
+
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
+  &.fade-in-left {
+    opacity: 1;
+    animation: ${fadeInLeft} 0.5s ease-in-out;
+  }
+  &.fade-in-right {
+    opacity: 1;
+    animation: ${fadeInRight} 0.5s ease-in-out;
   }
 `;
 
@@ -98,7 +133,7 @@ export const Dot = styled.div<{
   position: absolute;
   left: 100%;
   transform: translateX(-50%);
-  z-index: 1;
+  z-index: 2;
 
   @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
     left: 50%;

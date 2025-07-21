@@ -1,4 +1,5 @@
 import React from "react";
+import { useInView } from "react-intersection-observer";
 import * as S from "./styles";
 import { ColourKey, VerticalTimelineContentsProps } from "./types";
 import { getColorKey } from "./helper";
@@ -23,8 +24,18 @@ const VerticalTimelineContents: React.FC<VerticalTimelineContentsProps> = ({
       {contents.map((item, index) => {
         const colorKey = getColorKey(index);
 
+        const isLeft = index % 2 === 0;
+        const { ref, inView } = useInView({
+          triggerOnce: true,
+          rootMargin: "0px 0px -50px 0px",
+        });
+
+        const itemClassName = `${inView ? "fade-in" : ""}-${
+          isLeft ? "left" : "right"
+        }`;
+
         return (
-          <S.Item key={index}>
+          <S.Item key={index} ref={ref} className={itemClassName}>
             <S.TimelineElement
               colorKey={colorKey}
               finalColourSettings={finalColourSettings}
