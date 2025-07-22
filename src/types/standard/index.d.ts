@@ -43,7 +43,22 @@ export interface Attribute {
   attributeName: TranslateItem;
 }
 
+export interface FaqTab {
+  title: TranslateItem;
+  description: TranslateItem;
+}
+export interface FaqContent {
+  title: TranslateItem;
+  description: TranslateItem;
+  content: FaqTab[];
+}
+
 export interface IAcfHome {
+  faq: {
+    title: TranslateItem;
+    description: TranslateItem;
+    contents: FaqContent[];
+  };
   experience: TimelineContent;
   aboutMe: {
     technologies: { technology: string }[];

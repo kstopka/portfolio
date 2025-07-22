@@ -11,6 +11,10 @@ import ContinuousSlider from "./ContinuousSlider";
 import AboutContent from "./AboutContent";
 import TabbedContent from "./TabbedContent";
 import VerticalTimeline from "./VerticalTimeline";
+import VerticalTimelineContents from "./VerticalTimelineContents";
+import Faq from "./Faq";
+import FaqContent from "./FaqContent";
+import FaqTab from "./FaqTab";
 
 export {
   PageHeader,
@@ -26,4 +30,8 @@ export {
   AboutContent,
   TabbedContent,
   VerticalTimeline,
+  VerticalTimelineContents,
+  Faq,
+  FaqContent,
+  FaqTab,
 };

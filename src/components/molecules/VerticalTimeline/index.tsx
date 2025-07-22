@@ -1,8 +1,7 @@
 import React from "react";
 import * as S from "./styles";
 import { VerticalTimelineProps } from "./types";
-import { Loading, SectionWrapper } from "..";
-import VerticalTimelineContents from "../VerticalTimelineContents";
+import { Loading, SectionWrapper, VerticalTimelineContents } from "..";
 import { useContextState, IAppState, AppCtx } from "../../contexted";
 
 const VerticalTimeline: React.FC<VerticalTimelineProps> = ({

@@ -17,6 +17,36 @@ class StandardResourceClass {
             title
             content
             acfHome {
+              faq {
+                title {
+                  pl
+                  en
+                }
+                description {
+                  pl
+                  en
+                }
+                contents {
+                  title {
+                    pl
+                    en
+                  }
+                  description {
+                    pl
+                    en
+                  }
+                  content {
+                    title {
+                      pl
+                      en
+                    }
+                    description {
+                      pl
+                      en
+                    }
+                  }
+                }
+              }
               experience {
                 title {
                   pl

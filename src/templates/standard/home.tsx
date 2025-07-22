@@ -10,6 +10,7 @@ import {
   Loading,
   ContinuousSlider,
   VerticalTimeline,
+  Faq,
 } from "../../components/molecules";
 import Layout from "../../components/Layout";
 
@@ -32,7 +33,7 @@ const mockPersonalInfo: Pick<
 const HomePage: React.FC<HomeProps> = ({ pageContext }): JSX.Element => {
   const { fullname, github, linkedin } =
     pageContext.personalInfo || mockPersonalInfo;
-  const { aboutMe, hero, experience } = pageContext.page.acfHome;
+  const { aboutMe, hero, experience, faq } = pageContext.page.acfHome;
   const { language } = useContextState<IAppState>(AppCtx, ["language"]);
 
   if (!pageContext || !language) return <Loading />;
@@ -56,6 +57,7 @@ const HomePage: React.FC<HomeProps> = ({ pageContext }): JSX.Element => {
       />
       <HomeAbout aboutMe={aboutMe} />
       <VerticalTimeline timelineContent={experience} />
+      <Faq faq={faq} />
     </Layout>
   );
 };
