@@ -11,10 +11,10 @@ const Faq: React.FC<FaqProps> = ({ secendaryBackground, faq }): JSX.Element => {
     <SectionWrapper secendaryBackground={secendaryBackground}>
       <S.FaqWrapper>
         <S.Title>{faq.title[language]}</S.Title>
-        <S.Description>{faq.description[language]}</S.Description>
+        {/* <S.Description>{faq.description[language]}</S.Description> */}
         {faq.contents.length > 0 &&
           faq.contents.map((item, index) => (
-            <FaqContent faqContent={item} key={index} />
+            <FaqContent faqContent={item} key={index} index={index} />
           ))}
       </S.FaqWrapper>
     </SectionWrapper>

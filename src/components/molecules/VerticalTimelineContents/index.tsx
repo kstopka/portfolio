@@ -1,10 +1,11 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import * as S from "./styles";
-import { ColourKey, VerticalTimelineContentsProps } from "./types";
-import { getColorKey } from "./helper";
+import { VerticalTimelineContentsProps } from "./types";
 import { DEFAULT_COLOUR_SETTINGS } from "./settings";
 import { useContextState, IAppState, AppCtx } from "../../contexted";
+import { getColorKey } from "../../../hooks/getColorKey";
+import { ColourKey } from "../../../types/hooks";
 
 const VerticalTimelineContents: React.FC<VerticalTimelineContentsProps> = ({
   contents,

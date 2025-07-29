@@ -1,4 +1,4 @@
-import { ColourKey } from "./types";
+import { ColourKey } from "../../../types/hooks";
 
 export const DEFAULT_COLOUR_SETTINGS: Record<ColourKey, string> = {
   10: "10",

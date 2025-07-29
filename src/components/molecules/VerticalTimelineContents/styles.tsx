@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { flexColumn } from "../../../styles/mixins";
-import { ColourKey } from "./types";
+import { ColourKey } from "../../../types/hooks";
 
 export const ItemsContainer = styled.div<{
   timelineColors: ColourKey[];
