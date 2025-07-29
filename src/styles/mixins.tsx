@@ -16,7 +16,7 @@ export const flexColumn = css`
 export const descriptionContainer = css`
   ${flexColumn};
   justify-content: flex-start;
-  color: ${({ theme }) => theme.colors.neutral[70]};
+  color: ${({ theme }) => theme.colors.neutral[30]};
   border: 1px solid ${({ theme }) => theme.colors.primary[50]};
   border-radius: 8px;
   padding: 16px;

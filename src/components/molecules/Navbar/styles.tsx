@@ -18,7 +18,7 @@ export const Nav = styled.nav`
   transition: top 0.3s;
 
   padding: 1rem;
-  border-bottom: 1px solid ${(props) => props.theme.colors.neutral[80]};
+  border-bottom: 1px solid ${(props) => props.theme.colors.neutral[30]};
   min-height: ${({ theme }) => theme.layout.navigationHeight};
 
   @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
@@ -95,7 +95,7 @@ export const NavLinksContainer = styled.div<NavLinksContainerProps>`
   width: 100%;
   background-color: ${(props) => props.theme.colors.background};
   padding: 1rem 0;
-  border-top: 1px solid ${(props) => props.theme.colors.neutral[80]};
+  border-top: 1px solid ${(props) => props.theme.colors.neutral[30]};
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
   position: absolute;
@@ -127,7 +127,7 @@ export const NavLink = styled(Link)`
   transition: ${(props) => props.theme.transitions.standard};
 
   &:hover {
-    background-color: ${(props) => props.theme.colors.neutral[90]};
+    background-color: ${(props) => props.theme.colors.neutral[30]};
   }
 
   &.active {

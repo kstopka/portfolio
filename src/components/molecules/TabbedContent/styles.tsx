@@ -26,7 +26,7 @@ export const Tab = styled.div`
   border-bottom: none;
   border-radius: 8px 8px 0 0;
   margin-right: 8px;
-  color: ${({ theme }) => theme.colors.neutral[50]};
+  color: ${({ theme }) => theme.colors.neutral[30]};
   transition: all 0.3s ease;
   background-color: ${({ theme }) => theme.colors.secondaryBackground};
 
