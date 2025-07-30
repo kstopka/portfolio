@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import * as S from "./styles";
 import { FaqTabProps } from "./types";
 import { useContextState, IAppState, AppCtx } from "../../contexted";
@@ -8,9 +8,9 @@ const FaqTab: React.FC<FaqTabProps> = ({ tab }): JSX.Element => {
   const { language } = useContextState<IAppState>(AppCtx, ["language"]);
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleOpen = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleOpen = useCallback(() => {
+    setIsOpen((prev) => !prev);
+  }, []);
 
   return (
     <S.FaqTabWrapper>
@@ -26,4 +26,4 @@ const FaqTab: React.FC<FaqTabProps> = ({ tab }): JSX.Element => {
     </S.FaqTabWrapper>
   );
 };
-export default FaqTab;
+export default React.memo(FaqTab);

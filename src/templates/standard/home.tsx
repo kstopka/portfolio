@@ -34,9 +34,8 @@ const HomePage: React.FC<HomeProps> = ({ pageContext }): JSX.Element => {
   const { fullname, github, linkedin } =
     pageContext.personalInfo || mockPersonalInfo;
   const { aboutMe, hero, experience, faq } = pageContext.page.acfHome;
-  const { language } = useContextState<IAppState>(AppCtx, ["language"]);
 
-  if (!pageContext || !language) return <Loading />;
+  if (!pageContext) return <Loading />;
 
   return (
     <Layout personalInfo={pageContext.personalInfo}>

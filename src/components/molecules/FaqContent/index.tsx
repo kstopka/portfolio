@@ -23,4 +23,4 @@ const FaqContent: React.FC<FaqContentProps> = ({
     </S.FaqContentWrapper>
   );
 };
-export default FaqContent;
+export default React.memo(FaqContent);
