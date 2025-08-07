@@ -2,7 +2,7 @@ import React from "react";
 import * as S from "./styles";
 import { FaqContentProps } from "./types";
 import { useContextState, IAppState, AppCtx } from "../../contexted";
-import { FaqTab } from "..";
+import FaqTab from "../FaqTab";
 import { getColorKey } from "../../../hooks/getColorKey";
 
 const FaqContent: React.FC<FaqContentProps> = ({

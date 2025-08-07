@@ -35,12 +35,7 @@ export const Title = styled.p`
 export const Description = styled.p<{ isOpen: boolean }>`
   font-size: 14px;
   color: ${({ theme }) => theme.colors.neutral[30]};
-  max-height: 0;
+  max-height: ${({ isOpen }) => (isOpen ? "200px" : "0")};
   overflow: hidden;
   transition: max-height 0.3s ease-in-out;
-  ${({ isOpen }) =>
-    isOpen &&
-    `
-    max-height: 200px;
-  `}
 `;

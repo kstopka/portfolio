@@ -2,7 +2,7 @@ import React, { useState, useCallback } from "react";
 import * as S from "./styles";
 import { FaqTabProps } from "./types";
 import { useContextState, IAppState, AppCtx } from "../../contexted";
-import { ArrowSVG, GraduateCapSVG } from "../../../assets/symbols";
+import { ArrowSVG } from "../../../assets/symbols";
 
 const FaqTab: React.FC<FaqTabProps> = ({ tab }): JSX.Element => {
   const { language } = useContextState<IAppState>(AppCtx, ["language"]);
