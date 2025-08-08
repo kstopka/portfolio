@@ -33,11 +33,11 @@ self.__precacheManifest = [
     "url": "framework-d7e71be69e52702f30b1.js"
   },
   {
-    "url": "app-141f63df11dec51d8627.js"
+    "url": "app-f1e1c887c0391a985747.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "eab93031a484a21d78454c5a8d1b157e"
+    "revision": "3e16ed63de97a930308b4f26ae5af179"
   },
   {
     "url": "manifest.webmanifest",
@@ -151,7 +151,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-141f63df11dec51d8627.js`))) {
+  if (!resources || !(await caches.match(`/app-f1e1c887c0391a985747.js`))) {
     return await fetch(event.request)
   }
 
@@ -178,6 +178,13 @@ self.addEventListener("message", (event: MessageEvent) => {
   if (event.data === "SKIP_WAITING") {
     (self as ServiceWorkerGlobalScope).skipWaiting();
   }
+  if (event.data === "RELOAD_ALL_CLIENTS") {
+    (self as ServiceWorkerGlobalScope).clients.matchAll().then((clients) => {
+      clients.forEach((client) => {
+        (client as WindowClient).navigate(client.url);
+      });
+    });
+  }
 });
 
 self.addEventListener("install", (event: ExtendableEvent) => {
@@ -186,10 +193,4 @@ self.addEventListener("install", (event: ExtendableEvent) => {
 
 self.addEventListener("activate", (event: ExtendableEvent) => {
   event.waitUntil((self as ServiceWorkerGlobalScope).clients.claim());
-});
-
-self.addEventListener("controllerchange", () => {
-  if (navigator.serviceWorker.controller) {
-    window.location.reload();
-  }
 });
