@@ -12,10 +12,13 @@ const Head: React.FC<HeadProps> = () => {
       htmlAttributes={{
         lang: language || "pl",
       }}
-      title={
-        "Fronted Developer Portfolio | Frontend Developer | React, Javascript, TypeScript"
-      }
+      title={"Frontend Developer | React | Javascript | TypeScript"}
     >
+      {/* DESCRIPTION */}
+      <meta
+        name="description"
+        content="Portfolio Frontend Developera specjalizującego się w React, JavaScript i TypeScript."
+      />
       {/* FONTS */}
       <link rel="preconnect" href="https://fonts.gstatic.com" />
 
