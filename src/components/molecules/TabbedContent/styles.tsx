@@ -20,7 +20,7 @@ export const TabsWrapper = styled.div`
 `;
 
 export const Tab = styled.div`
-  padding: 8px 16px;
+  padding: 8px 8px;
   cursor: pointer;
   border: 1px solid ${({ theme }) => theme.colors.neutral[20]};
   border-bottom: none;
@@ -41,6 +41,15 @@ export const Tab = styled.div`
     font-weight: bold;
     position: relative;
     z-index: 1;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    font-size: 18px;
+    padding: 8px 12px;
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
+    font-size: 20px;
+    padding: 8px 16px;
   }
 `;
 

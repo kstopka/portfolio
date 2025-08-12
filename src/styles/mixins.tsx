@@ -16,10 +16,21 @@ export const flexColumn = css`
 export const descriptionContainer = css`
   ${flexColumn};
   justify-content: flex-start;
-  color: ${({ theme }) => theme.colors.neutral[30]};
   border: 1px solid ${({ theme }) => theme.colors.primary[50]};
   border-radius: 8px;
   padding: 16px;
   position: relative;
   background-color: ${({ theme }) => theme.colors.secondaryBackground};
+
+  color: ${({ theme }) => theme.colors.neutral[30]};
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-align: justify;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    font-size: 18px;
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
+    font-size: 20px;
+  }
 `;
