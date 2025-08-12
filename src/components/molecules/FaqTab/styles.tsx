@@ -4,11 +4,14 @@ import { flexColumn, flexRow } from "../../../styles/mixins";
 export const FaqTabWrapper = styled.div`
   padding: 10px 0;
   border-bottom: 1px solid ${({ theme }) => theme.colors.neutral[30]};
-  cursor: pointer;
   width: 100%;
 
   &:last-child {
     border-bottom: none;
+  }
+
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    cursor: pointer;
   }
 `;
 
