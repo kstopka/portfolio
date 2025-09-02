@@ -17,6 +17,11 @@ class StandardResourceClass {
             title
             content
             acfHome {
+              homeProjects {
+                nodes {
+                  id
+                }
+              }
               faq {
                 title {
                   pl

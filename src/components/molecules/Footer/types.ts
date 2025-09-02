@@ -1,5 +1,5 @@
-import { IPage } from "../../../types/standard";
+import { PersonalInfo } from "../../../types/standard";
 
 export interface FooterProps {
-  personalInfo?: IPage[`acfContact`][`contact`];
+  personalInfo: PersonalInfo;
 }

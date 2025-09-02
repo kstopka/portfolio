@@ -14,6 +14,8 @@ export interface IPost {
   };
 }
 
+export type IPorject = IPost;
+
 export interface ICategory {
   id: string;
   name: string;

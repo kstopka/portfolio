@@ -1,5 +1,5 @@
 import React from "react";
-import { IPage } from "../../types/standard";
+import { IPage, PersonalInfo } from "../../types/standard";
 import { AppCtx, IAppState, useContextState } from "../../components/contexted";
 import { PageHeader, Loading } from "../../components/molecules";
 import Layout from "../../components/Layout";
@@ -7,7 +7,7 @@ import Layout from "../../components/Layout";
 interface ContactProps {
   pageContext: {
     page: IPage;
-    personalInfo?: IPage[`acfContact`][`contact`];
+    personalInfo: PersonalInfo;
   };
 }
 

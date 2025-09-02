@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { IPage } from "../../types/standard";
+import { IPage, PersonalInfo } from "../../types/standard";
 import Button from "../../components/atoms/Button";
 import { useContextState, IAppState, AppCtx } from "../../components/contexted";
 import {
@@ -17,26 +17,15 @@ import Layout from "../../components/Layout";
 interface HomeProps {
   pageContext: {
     page: IPage;
-    personalInfo?: IPage[`acfContact`][`contact`];
+    personalInfo: PersonalInfo;
   };
 }
 
-const mockPersonalInfo: Pick<
-  IPage[`acfContact`][`contact`],
-  "fullname" | "github" | "linkedin"
-> = {
-  fullname: "Full Name",
-  github: "github",
-  linkedin: "linkedin",
-};
-
 const HomePage: React.FC<HomeProps> = ({ pageContext }): JSX.Element => {
-  const { fullname, github, linkedin } =
-    pageContext.personalInfo || mockPersonalInfo;
+  const { fullname, github, linkedin } = pageContext.personalInfo;
   const { aboutMe, hero, experience, faq } = pageContext.page.acfHome;
 
   if (!pageContext) return <Loading />;
-
   return (
     <Layout personalInfo={pageContext.personalInfo}>
       {/* <ColourPalette /> */}

@@ -11,19 +11,19 @@ const Footer: React.FC<FooterProps> = ({ personalInfo }) => {
     <S.Footer id="contact">
       <S.FooterWrapper>
         <S.FooterText>
-          {`${new Date().getFullYear()} © ${personalInfo?.fullname}`}
+          {`${new Date().getFullYear()} © ${personalInfo.fullname}`}
         </S.FooterText>
         <S.ContactWrapper>
           <S.IconContainer>
             <MailSVG />
           </S.IconContainer>
-          <p>{personalInfo?.email}</p>
+          <p>{personalInfo.email}</p>
         </S.ContactWrapper>
         <S.IconsWrapper>
-          <Link to={`https://www.linkedin.com/in/${personalInfo?.linkedin}`}>
+          <Link to={`https://www.linkedin.com/in/${personalInfo.linkedin}`}>
             <LinkedinSVG />
           </Link>
-          <Link to={`https://github.com/${personalInfo?.github}`}>
+          <Link to={`https://github.com/${personalInfo.github}`}>
             <GithubSVG />
           </Link>
         </S.IconsWrapper>

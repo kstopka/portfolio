@@ -1,3 +1,4 @@
 import StandardPagesGenerator from "./standard";
+import PagesGeneratorUtils from "./utils";
 
-export { StandardPagesGenerator };
+export { StandardPagesGenerator, PagesGeneratorUtils };

@@ -3,6 +3,7 @@ import {
   StandardResource,
   StandardPagesGenerator,
   BlogResource,
+  PagesGeneratorUtils,
 } from "./gatsby-custom";
 import { IPage } from "./src/types/standard";
 import { IPost } from "./src/types/blog";
@@ -20,14 +21,19 @@ export const createPages: GatsbyNode["createPages"] = async ({
   if (!pages) return console.log(`pages undefined in create page`);
   if (!blogPosts) return console.log(`blogPosts undefined in create page`);
 
-  // Create homoePorjects
+  // Get Home Projects
+  const homeProjects = PagesGeneratorUtils.getHomeProjects(pages, blogPosts);
 
   // Create personal info
-  const contactPage = pages.find((el) => el.slug === `contact`);
-  const personalInfo = contactPage?.acfContact?.contact;
+  const personalInfo = PagesGeneratorUtils.getPersonalInfo(pages);
 
   // Create to Single pages
-  pages.forEach(({ slug }) =>
-    StandardPagesGenerator.simplePage(createPage, pages, slug, personalInfo)
+  pages.forEach((page) =>
+    StandardPagesGenerator.simplePage(
+      createPage,
+      page,
+      homeProjects,
+      personalInfo
+    )
   );
 };

@@ -9,11 +9,11 @@ import { IAppState } from "../contexted/App/types";
 import { GlobalStyles } from "../../styles/global";
 import { Head, Navbar } from "../molecules";
 import { Footer } from "../molecules";
-import { IPage } from "../../types/standard";
+import { PersonalInfo } from "../../types/standard";
 
 interface ILayout {
   children: React.ReactNode;
-  personalInfo?: IPage[`acfContact`][`contact`];
+  personalInfo: PersonalInfo;
 }
 
 const Layout: React.FC<ILayout> = ({ children, personalInfo }): JSX.Element => {

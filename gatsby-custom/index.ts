@@ -1,4 +1,12 @@
-import { StandardPagesGenerator } from "./pages-generators";
+import {
+  StandardPagesGenerator,
+  PagesGeneratorUtils,
+} from "./pages-generators";
 import { StandardResource, BlogResource } from "./queries";
 
-export { StandardPagesGenerator, StandardResource, BlogResource };
+export {
+  StandardPagesGenerator,
+  StandardResource,
+  BlogResource,
+  PagesGeneratorUtils,
+};

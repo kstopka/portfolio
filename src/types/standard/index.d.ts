@@ -5,6 +5,11 @@ export type TranslateContent = {
   [key: string]: TranslateItem;
 };
 
+export type PersonalInfo = Pick<
+  IPage[`acfContact`][`contact`],
+  "fullname" | "github" | "linkedin" | "email"
+>;
+
 export interface IPage {
   id: string;
   slug: string;
@@ -50,6 +55,9 @@ export interface FaqContent {
 }
 
 export interface IAcfHome {
+  homeProjects: {
+    nodes: { id: strinf }[];
+  };
   faq: {
     title: TranslateItem;
     description: TranslateItem;
