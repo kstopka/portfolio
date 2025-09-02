@@ -1,6 +1,11 @@
 import { GatsbyNode } from "gatsby";
-import { StandardResource, StandardPagesGenerator } from "./gatsby-custom";
+import {
+  StandardResource,
+  StandardPagesGenerator,
+  BlogResource,
+} from "./gatsby-custom";
 import { IPage } from "./src/types/standard";
+import { IPost } from "./src/types/blog";
 
 export const createPages: GatsbyNode["createPages"] = async ({
   graphql,
@@ -10,8 +15,12 @@ export const createPages: GatsbyNode["createPages"] = async ({
   const { createPage } = actions;
 
   const pages: IPage[] | undefined = await StandardResource.getPages(graphql);
+  const blogPosts: IPost[] | undefined = await BlogResource.getPosts(graphql);
 
   if (!pages) return console.log(`pages undefined in create page`);
+  if (!blogPosts) return console.log(`blogPosts undefined in create page`);
+
+  // Create homoePorjects
 
   // Create personal info
   const contactPage = pages.find((el) => el.slug === `contact`);

@@ -1,9 +1,5 @@
 import { Language } from "../../components/contexted/App/types";
-
-type TranslateItem = {
-  pl: string;
-  en: string;
-};
+import { TranslateItem } from "../common";
 
 export type TranslateContent = {
   [key: string]: TranslateItem;
