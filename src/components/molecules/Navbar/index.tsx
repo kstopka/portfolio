@@ -17,6 +17,9 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ className }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
   const { theme: themeValue, language } = useContextState<IAppState>(AppCtx, [
     "theme",
     "language",
@@ -25,10 +28,6 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
     "toggleTheme",
     "toggleLanguage",
   ]);
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
 
   return (
     <S.Nav className={className}>
@@ -39,7 +38,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
         <span></span>
       </S.HamburgerButton>
 
-      <S.NavLinksContainer isOpen={isMobileMenuOpen}>
+      <S.NavLinksContainer $isOpen={isMobileMenuOpen}>
         {URL_PATHS_Arr.map((link) => (
           <S.NavLink
             key={link[language]}

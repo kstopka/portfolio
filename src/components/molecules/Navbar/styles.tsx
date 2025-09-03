@@ -85,11 +85,11 @@ export const HamburgerButton = styled.button`
 `;
 
 interface NavLinksContainerProps {
-  isOpen: boolean;
+  $isOpen: boolean;
 }
 
 export const NavLinksContainer = styled.div<NavLinksContainerProps>`
-  display: ${(props) => (props.isOpen ? "flex" : "none")};
+  display: ${(props) => (props.$isOpen ? "flex" : "none")};
   flex-direction: column;
   align-items: flex-start;
   width: 100%;

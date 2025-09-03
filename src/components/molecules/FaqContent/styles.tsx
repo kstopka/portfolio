@@ -11,9 +11,9 @@ export const FaqContentWrapper = styled.div`
   border-radius: 5px;
   background-color: ${({ theme }) => theme.colors.secondaryBackground};
 `;
-export const Title = styled.h4<{ colorKey: number }>`
+export const Title = styled.h4<{ $colorKey: number }>`
   font-size: 18px;
-  color: ${({ theme, colorKey }) => theme.colors.primary[colorKey]};
+  color: ${({ theme, $colorKey }) => theme.colors.primary[$colorKey]};
 `;
 export const Description = styled.p`
   font-size: 14px;

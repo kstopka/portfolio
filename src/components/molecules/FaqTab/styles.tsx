@@ -23,11 +23,11 @@ export const TitleWrapper = styled.div`
   flex-grow: 1;
 `;
 
-export const SvgWrapper = styled.div<{ isOpen: boolean }>`
+export const SvgWrapper = styled.div<{ $isOpen: boolean }>`
   ${flexColumn}
   height: 28px;
   width: 28px;
-  transform: ${({ isOpen }) => (isOpen ? "rotate(180deg)" : "rotate(0deg)")};
+  transform: ${({ $isOpen }) => ($isOpen ? "rotate(180deg)" : "rotate(0deg)")};
   transition: transform 0.3s ease-in-out;
 `;
 
@@ -35,10 +35,10 @@ export const Title = styled.p`
   ${flexRow}
   justify-content: space-between;
 `;
-export const Description = styled.p<{ isOpen: boolean }>`
+export const Description = styled.p<{ $isOpen: boolean }>`
   font-size: 14px;
   color: ${({ theme }) => theme.colors.neutral[30]};
-  max-height: ${({ isOpen }) => (isOpen ? "200px" : "0")};
+  max-height: ${({ $isOpen }) => ($isOpen ? "200px" : "0")};
   overflow: hidden;
   transition: max-height 0.3s ease-in-out;
 `;

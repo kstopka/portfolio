@@ -9,8 +9,8 @@ const SectionWrapper: React.FC<SectionWrapperProps> = ({
   children,
 }): JSX.Element => (
   <S.SectionWrapperWrapper
-    secendaryBackground={secendaryBackground}
-    fullWidth={fullWidth}
+    $secendaryBackground={secendaryBackground}
+    $fullWidth={fullWidth}
     id={id}
   >
     {children}

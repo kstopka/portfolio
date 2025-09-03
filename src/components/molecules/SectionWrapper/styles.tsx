@@ -2,20 +2,20 @@ import styled from "styled-components";
 import { flexRow } from "../../../styles/mixins";
 
 export const SectionWrapperWrapper = styled.div<{
-  secendaryBackground: boolean | undefined;
-  fullWidth: boolean | undefined;
+  $secendaryBackground: boolean;
+  $fullWidth: boolean;
 }>`
   ${flexRow}
 
-  background: ${({ theme, secendaryBackground }) =>
-    secendaryBackground
+  background: ${({ theme, $secendaryBackground }) =>
+    $secendaryBackground
       ? theme.colors.secondaryBackground
       : theme.colors.background};
 
   width: 100%;
 
-  ${({ fullWidth, theme }) =>
-    fullWidth
+  ${({ $fullWidth, theme }) =>
+    $fullWidth
       ? ``
       : `
     

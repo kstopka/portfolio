@@ -14,7 +14,7 @@ const FaqContent: React.FC<FaqContentProps> = ({
 
   return (
     <S.FaqContentWrapper aria-labelledby={faqContent.title[language]}>
-      <S.Title colorKey={colorKey}>{faqContent.title[language]}</S.Title>
+      <S.Title $colorKey={colorKey}>{faqContent.title[language]}</S.Title>
       {/* <S.Description>{faqContent.description[language]}</S.Description> */}
       {faqContent.content.length > 0 &&
         faqContent.content.map((item, index) => (

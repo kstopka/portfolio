@@ -20,12 +20,12 @@ const Footer: React.FC<FooterProps> = ({ personalInfo }) => {
           <p>{personalInfo.email}</p>
         </S.ContactWrapper>
         <S.IconsWrapper>
-          <Link to={`https://www.linkedin.com/in/${personalInfo.linkedin}`}>
+          <a href={`https://www.linkedin.com/in/${personalInfo.linkedin}`}>
             <LinkedinSVG />
-          </Link>
-          <Link to={`https://github.com/${personalInfo.github}`}>
+          </a>
+          <a href={`https://github.com/${personalInfo.github}`}>
             <GithubSVG />
-          </Link>
+          </a>
         </S.IconsWrapper>
       </S.FooterWrapper>
     </S.Footer>

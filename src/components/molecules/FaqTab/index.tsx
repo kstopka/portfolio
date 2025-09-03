@@ -18,11 +18,13 @@ const FaqTab: React.FC<FaqTabProps> = ({ tab }): JSX.Element => {
         <S.TitleWrapper>
           <S.Title>{tab.title[language]}</S.Title>
         </S.TitleWrapper>
-        <S.SvgWrapper isOpen={isOpen}>
+        <S.SvgWrapper $isOpen={isOpen}>
           <ArrowSVG />
         </S.SvgWrapper>
       </S.MainWrapper>
-      <S.Description isOpen={isOpen}>{tab.description[language]}</S.Description>
+      <S.Description $isOpen={isOpen}>
+        {tab.description[language]}
+      </S.Description>
     </S.FaqTabWrapper>
   );
 };

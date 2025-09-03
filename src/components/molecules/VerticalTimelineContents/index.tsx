@@ -19,8 +19,8 @@ const VerticalTimelineContents: React.FC<VerticalTimelineContentsProps> = ({
 
   return (
     <S.ItemsContainer
-      finalColourSettings={finalColourSettings}
-      timelineColors={contents.map((item, index) => getColorKey(index))}
+      $finalColourSettings={finalColourSettings}
+      $timelineColors={contents.map((item, index) => getColorKey(index))}
     >
       {contents.map((item, index) => {
         const colorKey = getColorKey(index);
@@ -38,8 +38,8 @@ const VerticalTimelineContents: React.FC<VerticalTimelineContentsProps> = ({
         return (
           <S.Item key={index} ref={ref} className={itemClassName}>
             <S.TimelineElement
-              colorKey={colorKey}
-              finalColourSettings={finalColourSettings}
+              $colorKey={colorKey}
+              $finalColourSettings={finalColourSettings}
             >
               <S.ContentBox>
                 <S.ContentTitle>{item.content.title[language]}</S.ContentTitle>
@@ -54,8 +54,8 @@ const VerticalTimelineContents: React.FC<VerticalTimelineContentsProps> = ({
               </S.ContentBox>
             </S.TimelineElement>
             <S.Dot
-              colorKey={colorKey}
-              finalColourSettings={finalColourSettings}
+              $colorKey={colorKey}
+              $finalColourSettings={finalColourSettings}
             />
           </S.Item>
         );

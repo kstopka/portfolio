@@ -3,8 +3,8 @@ import { flexColumn } from "../../../styles/mixins";
 import { ColourKey } from "../../../types/hooks";
 
 export const ItemsContainer = styled.div<{
-  timelineColors: ColourKey[];
-  finalColourSettings: Record<ColourKey, string>;
+  $timelineColors: ColourKey[];
+  $finalColourSettings: Record<ColourKey, string>;
 }>`
   ${flexColumn}
   position: relative;
@@ -17,9 +17,9 @@ export const ItemsContainer = styled.div<{
     height: 100%;
     width: 2px;
     z-index: 1;
-    background: ${({ timelineColors, theme, finalColourSettings }) =>
-      `linear-gradient(to bottom, ${theme.colors.background},${timelineColors
-        .map((el) => theme.colors.primary[finalColourSettings[el]])
+    background: ${({ $timelineColors, theme, $finalColourSettings }) =>
+      `linear-gradient(to bottom, ${theme.colors.background},${$timelineColors
+        .map((el) => theme.colors.primary[$finalColourSettings[el]])
         .join(", ")}, ${theme.colors.background})`};
   }
 
@@ -31,9 +31,9 @@ export const ItemsContainer = styled.div<{
       height: 100%;
       width: 2px;
       z-index: 1;
-      background: ${({ timelineColors, theme, finalColourSettings }) =>
-        `linear-gradient(to bottom, ${theme.colors.background},${timelineColors
-          .map((el) => theme.colors.primary[finalColourSettings[el]])
+      background: ${({ $timelineColors, theme, $finalColourSettings }) =>
+        `linear-gradient(to bottom, ${theme.colors.background},${$timelineColors
+          .map((el) => theme.colors.primary[$finalColourSettings[el]])
           .join(", ")}, ${theme.colors.background})`};
     }
   }
@@ -51,12 +51,12 @@ export const ContentDescription = styled.p`
 `;
 
 export const TimelineElement = styled.div<{
-  finalColourSettings: Record<ColourKey, string>;
-  colorKey: ColourKey;
+  $finalColourSettings: Record<ColourKey, string>;
+  $colorKey: ColourKey;
 }>`
   ${flexColumn}
-  color: ${({ theme, finalColourSettings, colorKey }) =>
-    theme.colors.primary[finalColourSettings[colorKey]]};
+  color: ${({ theme, $finalColourSettings, $colorKey }) =>
+    theme.colors.primary[$finalColourSettings[$colorKey]]};
   width: 100%;
 
   @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
@@ -69,8 +69,8 @@ export const TimelineElement = styled.div<{
   }
 
   li::marker {
-    color: ${({ theme, finalColourSettings, colorKey }) =>
-      theme.colors.primary[finalColourSettings[colorKey]]};
+    color: ${({ theme, $finalColourSettings, $colorKey }) =>
+      theme.colors.primary[$finalColourSettings[$colorKey]]};
   }
 `;
 
@@ -122,14 +122,14 @@ export const Item = styled.div`
 `;
 
 export const Dot = styled.div<{
-  finalColourSettings: Record<ColourKey, string>;
-  colorKey: ColourKey;
+  $finalColourSettings: Record<ColourKey, string>;
+  $colorKey: ColourKey;
 }>`
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: ${({ theme, finalColourSettings, colorKey }) =>
-    theme.colors.primary[finalColourSettings[colorKey]]};
+  background: ${({ theme, $finalColourSettings, $colorKey }) =>
+    theme.colors.primary[$finalColourSettings[$colorKey]]};
   position: absolute;
   left: 100%;
   transform: translateX(-50%);
