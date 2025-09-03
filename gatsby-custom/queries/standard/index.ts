@@ -41,11 +41,11 @@ class StandardResourceClass {
                     en
                   }
                   content {
-                    title {
+                    question {
                       pl
                       en
                     }
-                    description {
+                    answer {
                       pl
                       en
                     }

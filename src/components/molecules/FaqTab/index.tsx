@@ -16,15 +16,13 @@ const FaqTab: React.FC<FaqTabProps> = ({ tab }): JSX.Element => {
     <S.FaqTabWrapper>
       <S.MainWrapper onClick={toggleOpen}>
         <S.TitleWrapper>
-          <S.Title>{tab.title[language]}</S.Title>
+          <S.Title>{tab.question[language]}</S.Title>
         </S.TitleWrapper>
         <S.SvgWrapper $isOpen={isOpen}>
           <ArrowSVG />
         </S.SvgWrapper>
       </S.MainWrapper>
-      <S.Description $isOpen={isOpen}>
-        {tab.description[language]}
-      </S.Description>
+      <S.Description $isOpen={isOpen}>{tab.answer[language]}</S.Description>
     </S.FaqTabWrapper>
   );
 };

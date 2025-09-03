@@ -45,8 +45,8 @@ export interface Attribute {
 }
 
 export interface FaqTab {
-  title: TranslateItem;
-  description: TranslateItem;
+  question: TranslateItem;
+  answer: TranslateItem;
 }
 export interface FaqContent {
   title: TranslateItem;
