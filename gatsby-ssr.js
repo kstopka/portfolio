@@ -4,6 +4,7 @@ import wrapRootElement from "./src/AllContextsWrapper";
 
 export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
+    <link key="fonts" rel="stylesheet" href="/fonts.css" />,
     <link
       key="preload-cabin"
       rel="preload"
