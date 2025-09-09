@@ -1,4 +1,5 @@
 import wrapRootElement from "./src/AllContextsWrapper";
+import "./src/styles/fonts.css";
 
 export function onServiceWorkerUpdateReady() {
   console.log("[SW] Update ready, reloading page...");

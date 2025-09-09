@@ -1,0 +1,39 @@
+/* Cabin Regular */
+@font-face {
+  font-family: "Cabin";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/Cabin/Cabin-Regular.woff2") format("woff2"),
+    url("/fonts/Cabin/Cabin-Regular.ttf") format("truetype");
+}
+
+/* Cabin Bold */
+@font-face {
+  font-family: "Cabin";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/Cabin/Cabin-Bold.woff2") format("woff2"),
+    url("/fonts/Cabin/Cabin-Bold.ttf") format("truetype");
+}
+
+/* Livvic Regular */
+@font-face {
+  font-family: "Livvic";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/Livvic/Livvic-Regular.woff2") format("woff2"),
+    url("/fonts/Livvic/Livvic-Regular.ttf") format("truetype");
+}
+
+/* Livvic Bold */
+@font-face {
+  font-family: "Livvic";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/Livvic/Livvic-Bold.woff2") format("woff2"),
+    url("/fonts/Livvic/Livvic-Bold.ttf") format("truetype");
+}

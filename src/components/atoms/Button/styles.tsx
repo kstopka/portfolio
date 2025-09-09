@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const baseButtonStyles = `
   border-radius: 4px;
-  font-weight: 500;
+  font-weight: 400;
   cursor: pointer;
   transition: ${(props: { theme: { transitions: { standard: string } } }) =>
     props.theme.transitions.standard};

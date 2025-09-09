@@ -36,7 +36,7 @@ export const Nav = styled.nav`
 
 export const LogoLink = styled(Link)`
   font-size: ${(props) => props.theme.fonts.size.h4};
-  font-weight: bold;
+  font-weight: 700;
   color: ${(props) => props.theme.colors.primary[50]};
   text-decoration: none;
   margin-bottom: 1rem;
@@ -131,7 +131,7 @@ export const NavLink = styled(Link)`
   }
 
   &.active {
-    font-weight: bold;
+    font-weight: 700;
     color: ${(props) => props.theme.colors.primary[50]};
   }
 

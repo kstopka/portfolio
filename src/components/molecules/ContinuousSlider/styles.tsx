@@ -21,7 +21,7 @@ export const Slide = styled.div`
   font-size: 2rem;
   line-height: 2.5rem;
   letter-spacing: 0.2rem;
-  font-weight: bold;
+  font-weight: 700;
   white-space: nowrap;
   color: transparent;
   -webkit-text-stroke: 2px ${({ theme }) => theme.colors.primary[60]};

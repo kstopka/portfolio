@@ -38,7 +38,7 @@ export const Tab = styled.div`
     border: 1px solid ${({ theme }) => theme.colors.primary[50]};
     border-bottom: none;
     color: ${({ theme }) => theme.colors.primary[50]};
-    font-weight: bold;
+    font-weight: 700;
     position: relative;
     z-index: 1;
   }
