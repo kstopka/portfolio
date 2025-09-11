@@ -35,6 +35,11 @@ class BlogResourceClass {
                 pl
                 en
               }
+              role {
+                pl
+                en
+              }
+              link
             }
           }
         }

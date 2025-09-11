@@ -11,20 +11,23 @@ import {
   ContinuousSlider,
   VerticalTimeline,
   Faq,
+  HomeProjects,
 } from "../../components/molecules";
 import Layout from "../../components/Layout";
+import { IPorject } from "../../types/blog";
 
 interface HomeProps {
   pageContext: {
     page: IPage;
     personalInfo: PersonalInfo;
+    projects: IPorject[];
   };
 }
 
 const HomePage: React.FC<HomeProps> = ({ pageContext }): JSX.Element => {
   const { fullname, github, linkedin } = pageContext.personalInfo;
   const { aboutMe, hero, experience, faq } = pageContext.page.acfHome;
-
+  const { projects } = pageContext;
   if (!pageContext) return <Loading />;
   return (
     <Layout personalInfo={pageContext.personalInfo}>
@@ -45,6 +48,7 @@ const HomePage: React.FC<HomeProps> = ({ pageContext }): JSX.Element => {
       />
       <HomeAbout aboutMe={aboutMe} />
       <VerticalTimeline timelineContent={experience} />
+      <HomeProjects projects={projects} />
       <Faq faq={faq} />
     </Layout>
   );

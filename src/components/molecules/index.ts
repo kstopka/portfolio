@@ -15,6 +15,8 @@ import VerticalTimelineContents from "./VerticalTimelineContents";
 import Faq from "./Faq";
 import FaqContent from "./FaqContent";
 import FaqTab from "./FaqTab";
+import HomeProjects from "./HomeProjects";
+import ProjectCard from "./ProjectCard";
 
 export {
   PageHeader,
@@ -34,4 +36,6 @@ export {
   Faq,
   FaqContent,
   FaqTab,
+  HomeProjects,
+  ProjectCard,
 };

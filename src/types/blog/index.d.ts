@@ -8,12 +8,14 @@ export interface IPost {
   tags: {
     nodes: ITag[];
   };
-  acfProjects: {
-    title: TranslateItem;
-    description: TranslateItem;
-  };
+  acfProjects: IAcfProjects;
 }
-
+export interface IAcfProjects {
+  title: TranslateItem;
+  description: TranslateItem;
+  role: TranslateItem;
+  link?: string;
+}
 export type IPorject = IPost;
 
 export interface ICategory {
