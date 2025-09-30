@@ -16,6 +16,10 @@ export const ProjectCardWrapper = styled.div`
   &:hover {
     transform: translateY(-2px);
   }
+
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    min-height: 408px;
+  }
 `;
 
 export const ProjectTitle = styled.h4``;

@@ -1,3 +1,5 @@
+import * as fs from "fs";
+import * as path from "path";
 import { GatsbyNode } from "gatsby";
 import {
   StandardResource,
@@ -26,6 +28,10 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
   // Create personal info
   const personalInfo = PagesGeneratorUtils.getPersonalInfo(pages);
+
+  // Save info to static/personalInfo.json
+  const filePath = path.resolve("./static/personalInfo.json");
+  fs.writeFileSync(filePath, JSON.stringify(personalInfo, null, 2));
 
   // Create to Single pages
   pages.forEach((page) =>

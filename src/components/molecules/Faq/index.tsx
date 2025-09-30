@@ -6,7 +6,6 @@ import { useContextState, IAppState, AppCtx } from "../../contexted";
 
 const Faq: React.FC<FaqProps> = ({ secendaryBackground, faq }): JSX.Element => {
   const { language } = useContextState<IAppState>(AppCtx, ["language"]);
-
   return (
     <SectionWrapper secendaryBackground={secendaryBackground}>
       <S.FaqWrapper>

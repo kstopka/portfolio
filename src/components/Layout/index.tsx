@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "@reach/router";
 import * as S from "./styles";
 
@@ -7,22 +7,28 @@ import theme from "../../styles/theme";
 import { AppCtx, useContextState } from "../contexted";
 import { IAppState } from "../contexted/App/types";
 import { GlobalStyles } from "../../styles/global";
-import { Head, Navbar } from "../molecules";
+import { Head, Loading, Navbar } from "../molecules";
 import { Footer } from "../molecules";
 import { PersonalInfo } from "../../types/standard";
 
 interface ILayout {
   children: React.ReactNode;
-  personalInfo: PersonalInfo;
+  personalInfo?: PersonalInfo;
 }
 
-const Layout: React.FC<ILayout> = ({ children, personalInfo }): JSX.Element => {
+const Layout: React.FC<ILayout> = ({
+  children,
+  personalInfo: propsPersonalInfo,
+}): JSX.Element => {
   const location = useLocation();
   const { theme: themeValue } = useContextState<IAppState>(AppCtx, ["theme"]);
+  const [personalInfo, setPersonalInfo] = useState<PersonalInfo | null>(
+    propsPersonalInfo || null
+  );
 
-  const [navClass, setNavClass] = React.useState("");
+  const [navClass, setNavClass] = useState("");
 
-  React.useEffect(() => {
+  useEffect(() => {
     let lastScrollY = window.pageYOffset;
 
     const handleScroll = () => {
@@ -43,6 +49,17 @@ const Layout: React.FC<ILayout> = ({ children, personalInfo }): JSX.Element => {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (!personalInfo) {
+      fetch("/personalInfo.json")
+        .then((res) => res.json())
+        .then((data) => setPersonalInfo(data))
+        .catch((err) => console.error("Failed to load personalInfo:", err));
+    }
+  }, []);
+
+  if (!personalInfo) return <Loading />;
 
   return (
     <ThemeProvider theme={theme[themeValue]}>

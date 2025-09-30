@@ -26,10 +26,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     <S.ProjectCardWrapper>
       <S.ProjectTitle>{title[language]}</S.ProjectTitle>
       <S.Description>{description[language]}</S.Description>
-      <S.Role>
-        {mocksText.role[language]}
-        {role[language]}
-      </S.Role>
+      <S.Role>{role[language]}</S.Role>
       <S.TechList>
         {nodes.length > 0 &&
           nodes.map((tech, i) => <S.TechItem key={i}>{tech.name}</S.TechItem>)}

@@ -1,11 +1,10 @@
-import React from "react";
-import { HeadFC, PageProps } from "gatsby";
-
-import { useContextState, IAppState, AppCtx } from "../components/contexted";
-import { navigate } from "gatsby";
-import { URL_PATHS } from "../constants";
-import Button from "../components/atoms/Button";
+import React, { useEffect, useState } from "react";
 import Layout from "../components/Layout";
+import Button from "../components/atoms/Button";
+import { HeadFC, PageProps, navigate } from "gatsby";
+import { useContextState, IAppState, AppCtx } from "../components/contexted";
+import { URL_PATHS } from "../constants";
+import { PersonalInfo } from "../types/standard";
 
 const TranslateNotFoundPage = {
   title: {
@@ -17,18 +16,30 @@ const TranslateNotFoundPage = {
     en: "The page you are looking for could not be found. Click to go back to the home page.",
   },
 };
+
 const NotFoundPage: React.FC<PageProps> = () => {
   const { language } = useContextState<IAppState>(AppCtx, ["language"]);
   const { title, description } = TranslateNotFoundPage;
 
+  const [personalInfo, setPersonalInfo] = useState<PersonalInfo | null>(null);
+
+  useEffect(() => {
+    fetch("/personalInfo.json")
+      .then((res) => res.json())
+      .then((data) => setPersonalInfo(data))
+      .catch((err) => console.error("Failed to load personalInfo:", err));
+  }, []);
+
+  if (!personalInfo) return null;
+
   return (
-    <Layout>
+    <Layout personalInfo={personalInfo}>
       <h1>{title[language]}</h1>
       <p>{description[language]}</p>
       <Button
         onClick={() => navigate(URL_PATHS.home.path)}
         label={URL_PATHS.home[language]}
-      ></Button>
+      />
     </Layout>
   );
 };
